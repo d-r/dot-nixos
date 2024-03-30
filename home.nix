@@ -23,6 +23,8 @@ in
 
       google-chrome
 
+      obsidian
+
       # IDEs
       jetbrains-toolbox
       # jetbrains.rust-rover
@@ -142,7 +144,7 @@ in
         enable_audio_bell = false;
         allow_remote_control = "socket-only";
       };
-    };    
+    };
 
     qutebrowser = {
       enable = true;
