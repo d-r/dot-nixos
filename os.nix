@@ -47,7 +47,6 @@
 
     opengl = {
       enable = true;
-      driSupport = true;
       extraPackages = with pkgs; [amdvlk];
     };
 
