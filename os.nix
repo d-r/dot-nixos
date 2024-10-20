@@ -130,6 +130,9 @@
 
   environment = {
     systemPackages = with pkgs; [
+      # Nix Helper
+      nh
+
       # CLI basics
       git
       wget
@@ -182,6 +185,7 @@
     ];
 
     sessionVariables = {
+      FLAKE = "/home/dan/sys";
       EDITOR = "micro";
       TERMINAL = "kitty";
       DEFAULT_BROWSER = "firefox";
