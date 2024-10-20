@@ -18,7 +18,7 @@ in
       nushell
       bat
       dijo
-      youtube-dl
+      yt-dlp
       unar
 
       google-chrome
