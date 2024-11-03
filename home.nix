@@ -137,7 +137,7 @@ in
 
     kitty = {
       enable = true;
-      theme = "VSCode_Dark";
+      themeFile = "VSCode_Dark";
       font = defaultFont;
       settings = {
         confirm_os_window_close = "0";
