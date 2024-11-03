@@ -110,11 +110,6 @@
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
 
-    sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
-    };
-
     # Utility for changing screen brightness.
     #
     # Decrease brightness by 30%:
