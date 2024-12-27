@@ -104,11 +104,7 @@
   programs = {
     # The Hyprland window manager.
     # I'm using the development version provided as a flake.
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    };
+    hyprland.enable = true;
 
     # Utility for changing screen brightness.
     #
