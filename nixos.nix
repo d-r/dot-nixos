@@ -14,10 +14,8 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  nixpkgs = {
-    hostPlatform = lib.mkDefault "x86_64-linux";
-    config.allowUnfree = true;
-  };
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  nixpkgs.config.allowUnfree = true;
 
   boot = {
     # Use latest kernel. Need this for WIFI to work.
@@ -101,10 +99,17 @@
     sudo.wheelNeedsPassword = false;
   };
 
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
   programs = {
-    # The Hyprland window manager.
-    # I'm using the development version provided as a flake.
+    xwayland.enable = true;
+
     hyprland.enable = true;
+
+    niri = {
+      enable = true;
+      package = pkgs.niri-unstable;
+    };
 
     # Utility for changing screen brightness.
     #
@@ -134,6 +139,7 @@
       # GUI basics
       wayland
       kitty
+      alacritty
       firefox-wayland
       vscode.fhs
 
@@ -174,6 +180,11 @@
 
       xdg-utils
     ];
+
+    variables = {
+      # Without this, Electron apps won't run in `niri`.
+      NIXOS_OZONE_WL = "1";
+    };
 
     sessionVariables = {
       FLAKE = "/home/dan/sys";
