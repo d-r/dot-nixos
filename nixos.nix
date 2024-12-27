@@ -104,7 +104,7 @@
   programs = {
     xwayland.enable = true;
 
-    hyprland.enable = true;
+    # hyprland.enable = true;
 
     niri = {
       enable = true;

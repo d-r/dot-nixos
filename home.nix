@@ -87,9 +87,16 @@ in
     # };
 
     configFile = {
-      "hypr".source = "${dots}/hypr";
+      # "hypr".source = "${dots}/hypr";
+      "hypr/dan.conf".source = "${dots}/hypr/hyprland.conf";
       "waybar".source = "${dots}/waybar";
     };
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    # extraConfig = builtins.readFile ./dots/hypr/hyprland.conf;
+    extraConfig = "source = dan.conf";
   };
 
   programs = {

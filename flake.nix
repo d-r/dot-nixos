@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
 
     niri.url = "github:sodiboo/niri-flake";
   };
@@ -25,6 +25,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.dan = import ./home.nix;
         }
+        # hyprland.homeManagerModules.default
       ];
       specialArgs = {inherit inputs;};
     };
