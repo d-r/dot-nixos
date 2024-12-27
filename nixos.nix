@@ -161,8 +161,9 @@
       # Audio control panel
       pavucontrol
 
-      # App launcher
+      # App launchers
       tofi
+      fuzzel
 
       # Wayland Event Viewer
       #
