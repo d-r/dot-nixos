@@ -96,6 +96,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     # extraConfig = builtins.readFile ./dots/hypr/hyprland.conf;
+    plugins = [ pkgs.hyprlandPlugins.hyprscroller ];
     extraConfig = "source = dan.conf";
   };
 
