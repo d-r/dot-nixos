@@ -90,6 +90,7 @@ in
       # "hypr".source = "${dots}/hypr";
       "hypr/dan.conf".source = "${dots}/hypr/hyprland.conf";
       "waybar".source = "${dots}/waybar";
+      "niri".source = "${dots}/niri";
     };
   };
 
