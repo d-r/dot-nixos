@@ -1,0 +1,45 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "niri/window"
+    ],
+    "modules-right": [
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "network",
+        "clock"
+    ],
+
+    "pulseaudio": {
+        "format": "<span foreground=\"#777\">VOL</span> {volume}%",
+        "format-muted": "<span foreground=\"#777\">VOL</span> <s>{volume}%</s>"
+    },
+    "backlight": {
+        "format": "<span foreground=\"#777\">BL</span> {percent}%"
+    },
+    "battery": {
+        "interval": 10,
+        "format": "<span foreground=\"#777\">AC</span> {capacity}%",
+        "format-discharging": "<span foreground=\"#777\">BAT</span> {capacity}%",
+        "tooltip": false
+    },
+    "network": {
+        "interval": 5,
+        "format": "<span foreground=\"#777\">WIFI</span> {signalStrength}%",
+        "format-disconnected": "OFFLINE",
+        "tooltip-format": "{essid}\n{ipaddr}\n{ifname}"
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%a %b %d %H:%M} ",
+        "tooltip-format": "Week {:%W}",
+        "tooltip": true
+    }
+}

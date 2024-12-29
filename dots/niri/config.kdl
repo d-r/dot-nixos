@@ -3,6 +3,11 @@ prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
+spawn-at-startup "code"
+
+// Can't use "~/.config/..." here, as only the absolute path works.
+spawn-at-startup "waybar" "-c" "/home/dan/.config/waybar/config.niri.jsonc"
+
 hotkey-overlay {
     skip-at-startup
 }

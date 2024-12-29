@@ -40,7 +40,6 @@ in
   };
 
   xdg.configFile = {
-    # "hypr".source = "${dots}/hypr";
     "hypr/settings.conf".source = "${dots}/hypr/hyprland.conf";
     "hypr/hyprpaper.conf".source = "${dots}/hypr/hyprpaper.conf";
     "waybar".source = "${dots}/waybar";
