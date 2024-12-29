@@ -127,6 +127,7 @@ in {
     themeFile = "VSCode_Dark";
     font = defaultFont;
     settings = {
+      shell = "${pkgs.nushell}/bin/nu";
       confirm_os_window_close = "0";
       enable_audio_bell = false;
       allow_remote_control = "socket-only";
