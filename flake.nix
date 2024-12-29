@@ -14,7 +14,11 @@
     niri.url = "github:sodiboo/niri-flake";
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs: {
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
     nixosConfigurations.pad = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

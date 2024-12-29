@@ -1,14 +1,16 @@
-{ config, pkgs, ... }:
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   dots = config.lib.file.mkOutOfStoreSymlink "/home/dan/sys/dots";
   defaultFont = {
-      name = "JetBrains Mono";
-      # A size of 10pt should equate to 13px, which is the size that JetBrains
-      # recommends for the font.
-      size = 10;
+    name = "JetBrains Mono";
+    # A size of 10pt should equate to 13px, which is the size that JetBrains
+    # recommends for the font.
+    size = 10;
   };
-in
-{
+in {
   home.username = "dan";
   home.homeDirectory = "/home/dan";
 
@@ -49,7 +51,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     # extraConfig = builtins.readFile ./dots/hypr/hyprland.conf;
-    plugins = [ pkgs.hyprlandPlugins.hyprscroller ];
+    plugins = [pkgs.hyprlandPlugins.hyprscroller];
     extraConfig = "source = settings.conf";
   };
 

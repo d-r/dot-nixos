@@ -1,13 +1,15 @@
-{ inputs, lib, config, pkgs, modulesPath, ... }:
-let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   osScript = pkgs.writeShellScriptBin "os" ''
     sudo nixos-rebuild --flake ~/sys#pad $@
   '';
   ossScript = pkgs.writeShellScriptBin "oss" ''
     os switch
   '';
-in
-{
+in {
   # Got this from https://www.youtube.com/watch?v=M_zMoHlbZBY
   # TODO: Document why this is needed.
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
@@ -50,7 +52,7 @@ in
 
   services = {
     openssh.enable = true;
- 
+
     pipewire = {
       enable = true;
       pulse.enable = true;
@@ -61,7 +63,7 @@ in
   };
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   programs = {
     xwayland.enable = true;
@@ -127,7 +129,8 @@ in
     pciutils
 
     # Support for my Razer mouse
-    openrazer-daemon razergenie
+    openrazer-daemon
+    razergenie
 
     # WIFI widget
     networkmanagerapplet
@@ -169,7 +172,7 @@ in
 
     roboto
     roboto-slab
-    roboto-mono  
+    roboto-mono
   ];
 
   system.stateVersion = "24.05";
