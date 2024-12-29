@@ -62,6 +62,11 @@ in {
     enableBashIntegration = true;
   };
 
+  programs.carapace = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
   programs.tealdeer = {
     enable = true;
     settings = {
