@@ -1,5 +1,12 @@
 { inputs, lib, config, pkgs, modulesPath, ... }:
-
+let
+  osScript = pkgs.writeShellScriptBin "os" ''
+    sudo nixos-rebuild --flake ~/sys#pad $@
+  '';
+  ossScript = pkgs.writeShellScriptBin "oss" ''
+    os switch
+  '';
+in
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -125,6 +132,10 @@
 
   environment = {
     systemPackages = with pkgs; [
+      # Scripts
+      osScript
+      ossScript
+
       # Nix Helper
       nh
 
@@ -222,7 +233,7 @@
     initialPassword = "iamdan";
     extraGroups = [
       "wheel"
-      "networkmanager"
+      "networkemanager"
     ];
   };
 
