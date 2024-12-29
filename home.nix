@@ -131,6 +131,10 @@ in {
       confirm_os_window_close = "0";
       enable_audio_bell = false;
       allow_remote_control = "socket-only";
+      disable_ligatures = "always";
+      window_padding_width = "8";
+      tab_bar_edge = "top";
+      active_tab_font_style = "normal"; # Default is "italic"
     };
   };
 
