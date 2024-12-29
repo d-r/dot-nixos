@@ -82,6 +82,7 @@ in
       last = "log -1 HEAD --stat";
 
       co = "checkout";
+      pf = "push --force";
       new-branch = "checkout -b";
       delete-branch = "branch -D";
       delete-remote-branch = "push origin --delete";
