@@ -1,64 +1,5 @@
-// Set the wallpaper
-spawn-at-startup "hyprpaper"
-
-// Start notification daemon
-spawn-at-startup "mako"
-
-// Launch the top bar
-// Can't use "~/.config/..." here, as only the absolute path works.
-spawn-at-startup "waybar" "-c" "/home/dan/.config/waybar/config.niri.jsonc"
-
-spawn-at-startup "code"
-
-// Remove titlebars from windows.
-prefer-no-csd
-
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-hotkey-overlay {
-    skip-at-startup
-}
-
-input {
-    keyboard {
-        xkb {
-            layout "us"
-        }
-    }
-    touchpad {
-        tap
-        natural-scroll
-    }
-}
-
-output "eDP-1" {
-    scale 1
-    transform "normal"
-    position x=1280 y=0
-}
-
-layout {
-    gaps 16
-    center-focused-column "never"
-    default-column-width { proportion 0.5; }
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
-    }
-    focus-ring {
-        width 4
-        active-color "#7fc8ff"
-        inactive-color "#505050"
-    }
-}
-
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
+//------------------------------------------------------------------------------
+// KEYBINDINGS
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -140,3 +81,74 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 }
+
+//------------------------------------------------------------------------------
+// SETTINGS
+
+// Remove titlebars from windows.
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+}
+
+output "eDP-1" {
+    scale 1
+    transform "normal"
+    position x=1280 y=0
+}
+
+layout {
+    gaps 16
+    center-focused-column "never"
+    default-column-width { proportion 0.5; }
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    focus-ring {
+        width 4
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+}
+
+//------------------------------------------------------------------------------
+// WINDOW RULES
+
+// Work around WezTerm's initial configure bug
+// by setting an empty default-column-width.
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+//------------------------------------------------------------------------------
+// STARTUP
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// Set the wallpaper
+spawn-at-startup "hyprpaper"
+
+// Start notification daemon
+spawn-at-startup "mako"
+
+// Launch the top bar
+// Can't use "~/.config/..." here, as only the absolute path works.
+spawn-at-startup "waybar" "-c" "/home/dan/.config/waybar/config.niri.jsonc"
+
+spawn-at-startup "code"
