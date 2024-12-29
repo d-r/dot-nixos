@@ -1,0 +1,3 @@
+# Sys
+
+My NixOS configuration.
