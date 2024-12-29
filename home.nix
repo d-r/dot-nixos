@@ -57,14 +57,22 @@ in {
 
   programs.bash.enable = true;
 
+  programs.nushell = {
+    enable = true;
+    envFile.source = ./dots/nushell/env.nu;
+    configFile.source = ./dots/nushell/config.nu;
+  };
+
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
+    enableNushellIntegration = true;
   };
 
   programs.carapace = {
     enable = true;
     enableBashIntegration = true;
+    enableNushellIntegration = true;
   };
 
   programs.tealdeer = {
