@@ -27,10 +27,6 @@ in {
 
     # IDEs
     jetbrains-toolbox
-    # jetbrains.rust-rover
-    # jetbrains.clion
-    # jetbrains.webstorm
-    # jetbrains.pycharm-professional
   ];
 
   xdg.enable = true;
@@ -50,7 +46,6 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
-    # extraConfig = builtins.readFile ./dots/hypr/hyprland.conf;
     plugins = [pkgs.hyprlandPlugins.hyprscroller];
     extraConfig = "source = settings.conf";
   };
