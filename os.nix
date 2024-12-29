@@ -3,12 +3,15 @@
   pkgs,
   ...
 }: let
-  osScript = pkgs.writeShellScriptBin "os" ''
-    sudo nixos-rebuild --flake ~/sys#pad $@
-  '';
-  ossScript = pkgs.writeShellScriptBin "oss" ''
-    os switch
-  '';
+  script = pkgs.writeShellScriptBin;
+  scripts = {
+    os = script "os" ''
+      sudo nixos-rebuild --flake ~/sys#pad $@
+    '';
+    oss = script "oss" ''
+      os switch
+    '';
+  };
 in {
   # Got this from https://www.youtube.com/watch?v=M_zMoHlbZBY
   # TODO: Document why this is needed.
@@ -87,8 +90,8 @@ in {
 
   environment.systemPackages = with pkgs; [
     # Scripts
-    osScript
-    ossScript
+    scripts.os
+    scripts.oss
 
     # Nix Helper
     nh
