@@ -3,15 +3,8 @@
   pkgs,
   ...
 }: let
+  flake = "/home/dan/sys";
   script = pkgs.writeShellScriptBin;
-  scripts = {
-    os = script "os" ''
-      sudo nixos-rebuild --flake ~/sys#pad $@
-    '';
-    oss = script "oss" ''
-      os switch
-    '';
-  };
 in {
   # Got this from https://www.youtube.com/watch?v=M_zMoHlbZBY
   # TODO: Document why this is needed.
@@ -90,8 +83,9 @@ in {
 
   environment.systemPackages = with pkgs; [
     # Scripts
-    scripts.os
-    scripts.oss
+    (script "sf" ''nix flake $@ ${flake}'')
+    (script "os" ''sudo nixos-rebuild --flake ${flake}#pad $@'')
+    (script "oss" ''os switch'')
 
     # Nix Helper
     nh
@@ -177,7 +171,7 @@ in {
   };
 
   environment.sessionVariables = {
-    FLAKE = "/home/dan/sys";
+    FLAKE = flake;
     EDITOR = "micro";
     TERMINAL = "kitty";
     DEFAULT_BROWSER = "firefox";
