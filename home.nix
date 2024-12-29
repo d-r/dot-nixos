@@ -55,6 +55,13 @@ in {
     extraConfig = "source = settings.conf";
   };
 
+  programs.bash.enable = true;
+
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
+
   programs.tealdeer = {
     enable = true;
     settings = {
