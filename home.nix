@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 let
   dots = config.lib.file.mkOutOfStoreSymlink "/home/dan/sys/dots";
-
   defaultFont = {
       name = "JetBrains Mono";
       # A size of 10pt should equate to 13px, which is the size that JetBrains
@@ -10,95 +9,49 @@ let
   };
 in
 {
-  home = {
-    username = "dan";
-    homeDirectory = "/home/dan";
+  home.username = "dan";
+  home.homeDirectory = "/home/dan";
 
-    packages = with pkgs; [
-      nushell
-      bat
-      dijo
-      yt-dlp
-      unar
+  home.packages = with pkgs; [
+    nushell
+    bat
+    dijo
+    yt-dlp
+    unar
 
-      google-chrome
+    google-chrome
 
-      obsidian
+    obsidian
 
-      # IDEs
-      jetbrains-toolbox
-      # jetbrains.rust-rover
-      # jetbrains.clion
-      # jetbrains.webstorm
-      # jetbrains.pycharm-professional
+    # IDEs
+    jetbrains-toolbox
+    # jetbrains.rust-rover
+    # jetbrains.clion
+    # jetbrains.webstorm
+    # jetbrains.pycharm-professional
+  ];
 
-      # # It is sometimes useful to fine-tune packages, for example, by applying
-      # # overrides. You can do that directly here, just don't forget the
-      # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-      # # fonts?
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+  xdg.enable = true;
 
-      # # You can also create simple shell scripts directly inside your
-      # # configuration. For example, this adds a command 'my-hello' to your
-      # # environment:
-      # (pkgs.writeShellScriptBin "my-hello" ''
-      #   echo "Hello, ${config.home.username}!"
-      # '')
-    ];
-
-    # Home Manager is pretty good at managing dotfiles. The primary way to manage
-    # plain files is through 'home.file'.
-    file = {
-      # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-      # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-      # # symlink to the Nix store copy.
-      # ".screenrc".source = dotfiles/screenrc;
-
-      # # You can also set the file content immediately.
-      # ".gradle/gradle.properties".text = ''
-      #   org.gradle.console=verbose
-      #   org.gradle.daemon.idletimeout=3600000
-      # '';
-    };
-
-    sessionVariables = {
-      DEFAULT_BROWSER = "chrome";
-      # EDITOR = "emacs";
-    };
+  xdg.userDirs = {
+    enable = true;
+    # Not sure...
+    # createDirectories = true;
   };
 
-  xdg = {
-    enable = true;
-
-    userDirs = {
-      enable = true;
-      # Not sure...
-      # createDirectories = true;
-    };
-
-    # mimeApps = {
-    #   enable = true;
-    #   defaultApplications = {
-    #     "text/html" = "firefox";
-    #     "x-scheme-handler/http" = "firefox";
-    #     "x-scheme-handler/https" = "firefox";
-    #     "application/pdf" = "firefox";
-    #   };
-    # };
-
-    configFile = {
-      # "hypr".source = "${dots}/hypr";
-      "hypr/dan.conf".source = "${dots}/hypr/hyprland.conf";
-      "waybar".source = "${dots}/waybar";
-      "niri".source = "${dots}/niri";
-    };
+  xdg.configFile = {
+    # "hypr".source = "${dots}/hypr";
+    "hypr/settings.conf".source = "${dots}/hypr/hyprland.conf";
+    "hypr/hyprpaper.conf".source = "${dots}/hypr/hyprpaper.conf";
+    "waybar".source = "${dots}/waybar";
+    "niri".source = "${dots}/niri";
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
     # extraConfig = builtins.readFile ./dots/hypr/hyprland.conf;
     plugins = [ pkgs.hyprlandPlugins.hyprscroller ];
-    extraConfig = "source = dan.conf";
+    extraConfig = "source = settings.conf";
   };
 
   programs = {
