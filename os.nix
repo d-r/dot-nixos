@@ -112,7 +112,6 @@ in {
     # GUI basics
     wayland
     kitty
-    alacritty
     firefox-wayland
     vscode.fhs
 
@@ -152,6 +151,7 @@ in {
     # named "XF86AudioLowerVolume" and XF86AudioRaiseVolume".
     wev
 
+    # TODO: Figure out what this is, and if I need it.
     xdg-utils
   ];
 

@@ -20,13 +20,6 @@ in {
     dijo
     yt-dlp
     unar
-
-    google-chrome
-
-    obsidian
-
-    # IDEs
-    jetbrains-toolbox
   ];
 
   xdg.enable = true;
