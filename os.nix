@@ -8,10 +8,6 @@ let
   '';
 in
 {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
-
   nix.settings = {
     experimental-features = "nix-command flakes";
 
@@ -21,66 +17,31 @@ in
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  nixpkgs.config.allowUnfree = true;
-
-  boot = {
-    # Use latest kernel. Need this for WIFI to work.
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-amd"];
-    extraModulePackages = [];
-
-    initrd = {
-      kernelModules = ["amdgpu"];
-      availableKernelModules = [ 
-        "nvme"
-        "xhci_pci"
-        "usb_storage"
-        "sd_mod"
-        "rtsx_pci_sdmmc"
-      ];
-    };
-
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
+  users.users.dan = {
+    isNormalUser = true;
+    initialPassword = "iamdan";
+    extraGroups = [
+      "wheel"
+      "networkemanager"
+    ];
   };
 
-  hardware = {
-    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [amdvlk];
-    };
-
-    # Disable PulseAudio as it conflicts with PipeWire.
-    pulseaudio.enable = false;
-
-    openrazer.enable = true;
+  i18n = {
+    defaultLocale = "en_IE.UTF-8";
+    supportedLocales = [
+      "en_IE.UTF-8/UTF-8"
+      "en_US.UTF-8/UTF-8"
+      "sv_SE.UTF-8/UTF-8"
+      "sv_SE/ISO-8859-1"
+    ];
   };
 
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    };
-    "/boot" = {
-      device = "/dev/disk/by-label/boot";
-      fsType = "vfat";
-    };
-  };
-  swapDevices = [{device = "/dev/disk/by-label/swap";}];
+  time.timeZone = "Europe/Stockholm";
 
-  networking = {
-    hostName = "pad";
-    networkmanager.enable = true;
-    useDHCP = lib.mkDefault true;
+  security = {
+    rtkit.enable = true;
+    sudo.wheelNeedsPassword = false;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   services = {
     openssh.enable = true;
@@ -91,27 +52,14 @@ in
       jack.enable = true;
     };
 
-    # GNOME
-    # xserver = {
-    #   enable = true;
-    #   displayManager.gdm.enable = true;
-    #   desktopManager.gnome.enable = true;
-    # };
-
     dbus.enable = true;
   };
 
-  security = {
-    rtkit.enable = true;
-    sudo.wheelNeedsPassword = false;
-  };
-
+  nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
 
   programs = {
     xwayland.enable = true;
-
-    # hyprland.enable = true;
 
     niri = {
       enable = true;
@@ -130,79 +78,77 @@ in
     dconf.enable = true;
   };
 
-  environment = {
-    systemPackages = with pkgs; [
-      # Scripts
-      osScript
-      ossScript
+  environment.systemPackages = with pkgs; [
+    # Scripts
+    osScript
+    ossScript
 
-      # Nix Helper
-      nh
+    # Nix Helper
+    nh
 
-      # CLI basics
-      git
-      wget
-      curl
-      rsync
-      micro
-      tealdeer
+    # CLI basics
+    git
+    wget
+    curl
+    rsync
+    micro
+    tealdeer
 
-      # GUI basics
-      wayland
-      kitty
-      alacritty
-      firefox-wayland
-      vscode.fhs
+    # GUI basics
+    wayland
+    kitty
+    alacritty
+    firefox-wayland
+    vscode.fhs
 
-      # Top bar for WM
-      waybar
+    # Top bar for WM
+    waybar
 
-      # Wallpaper utility for Hyprland
-      hyprpaper
+    # Wallpaper utility for Hyprland
+    hyprpaper
 
-      # Notification daemon
-      mako
+    # Notification daemon
+    mako
 
-      # Provides `notify-send` command to send desktop notifications
-      libnotify
+    # Provides `notify-send` command to send desktop notifications
+    libnotify
 
-      # Provides `lscpi` command to query builtin devices
-      pciutils
+    # Provides `lscpi` command to query builtin devices
+    pciutils
 
-      # Support for my Razer mouse
-      openrazer-daemon razergenie
+    # Support for my Razer mouse
+    openrazer-daemon razergenie
 
-      # WIFI widget
-      networkmanagerapplet
+    # WIFI widget
+    networkmanagerapplet
 
-      # Audio control panel
-      pavucontrol
+    # Audio control panel
+    pavucontrol
 
-      # App launchers
-      tofi
-      fuzzel
+    # App launchers
+    tofi
+    fuzzel
 
-      # Wayland Event Viewer
-      #
-      # Useful when defining keybinds and you need to work out what a certain key
-      # is called. For example, this is how I discovered that the volume keys are
-      # named "XF86AudioLowerVolume" and XF86AudioRaiseVolume".
-      wev
+    # Wayland Event Viewer
+    #
+    # Useful when defining keybinds and you need to work out what a certain key
+    # is called. For example, this is how I discovered that the volume keys are
+    # named "XF86AudioLowerVolume" and XF86AudioRaiseVolume".
+    wev
 
-      xdg-utils
-    ];
+    xdg-utils
+  ];
 
-    variables = {
-      # Without this, Electron apps won't run in `niri`.
-      NIXOS_OZONE_WL = "1";
-    };
+  environment.variables = {
+    # Without this, Electron apps won't run in `niri`.
+    NIXOS_OZONE_WL = "1";
+  };
 
-    sessionVariables = {
-      FLAKE = "/home/dan/sys";
-      EDITOR = "micro";
-      TERMINAL = "kitty";
-      DEFAULT_BROWSER = "firefox";
-    };
+  environment.sessionVariables = {
+    FLAKE = "/home/dan/sys";
+    EDITOR = "micro";
+    TERMINAL = "kitty";
+    DEFAULT_BROWSER = "firefox";
   };
 
   fonts.packages = with pkgs; [
@@ -215,27 +161,6 @@ in
     roboto-slab
     roboto-mono  
   ];
-
-  i18n = {
-    defaultLocale = "en_IE.UTF-8";
-    supportedLocales = [
-      "en_IE.UTF-8/UTF-8"
-      "en_US.UTF-8/UTF-8"
-      "sv_SE.UTF-8/UTF-8"
-      "sv_SE/ISO-8859-1"
-    ];
-  };
-
-  time.timeZone = "Europe/Stockholm";
-  
-  users.users.dan = {
-    isNormalUser = true;
-    initialPassword = "iamdan";
-    extraGroups = [
-      "wheel"
-      "networkemanager"
-    ];
-  };
 
   system.stateVersion = "24.05";
 }
