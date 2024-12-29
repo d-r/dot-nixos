@@ -97,12 +97,19 @@ in {
     nh
 
     # CLI basics
-    git
+    nushell
+    zoxide
+    carapace
+    micro
+    bat
+    tealdeer
     wget
     curl
     rsync
-    micro
-    tealdeer
+    unar
+    yt-dlp
+    git
+    dijo
 
     # Nix language tools
     # See https://www.youtube.com/watch?v=M_zMoHlbZBY
@@ -155,6 +162,15 @@ in {
     xdg-utils
   ];
 
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    iosevka
+    iosevka-comfy.comfy
+    roboto
+    roboto-slab
+    roboto-mono
+  ];
+
   environment.variables = {
     # Without this, Electron apps won't run in `niri`.
     NIXOS_OZONE_WL = "1";
@@ -166,17 +182,6 @@ in {
     TERMINAL = "kitty";
     DEFAULT_BROWSER = "firefox";
   };
-
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-
-    iosevka
-    iosevka-comfy.comfy
-
-    roboto
-    roboto-slab
-    roboto-mono
-  ];
 
   system.stateVersion = "24.05";
 }

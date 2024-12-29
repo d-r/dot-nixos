@@ -14,14 +14,6 @@ in {
   home.username = "dan";
   home.homeDirectory = "/home/dan";
 
-  home.packages = with pkgs; [
-    nushell
-    bat
-    dijo
-    yt-dlp
-    unar
-  ];
-
   xdg.enable = true;
 
   xdg.userDirs = {
