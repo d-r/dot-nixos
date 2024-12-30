@@ -140,6 +140,7 @@ in {
     vscode.fhs
     emacs
     tofi
+    rofi-wayland
     fuzzel
     tauon
   ];
