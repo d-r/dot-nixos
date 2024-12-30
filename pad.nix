@@ -2,7 +2,7 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
-    ./os.nix
+    ./userland.nix
   ];
 
   system.stateVersion = "24.05";
