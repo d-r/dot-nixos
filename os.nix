@@ -7,6 +7,9 @@
   flake = "/home/dan/sys";
   script = pkgs.writeShellScriptBin;
 in {
+  #-----------------------------------------------------------------------------
+  # NIX
+
   # Got this from https://www.youtube.com/watch?v=M_zMoHlbZBY
   # TODO: Document why this is needed.
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
@@ -21,6 +24,9 @@ in {
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
+  #-----------------------------------------------------------------------------
+  # USERS
+
   users.users.dan = {
     isNormalUser = true;
     initialPassword = "iamdan";
@@ -29,6 +35,11 @@ in {
       "networkemanager"
     ];
   };
+
+  security.sudo.wheelNeedsPassword = false;
+
+  #-----------------------------------------------------------------------------
+  # ENVIRONMENT
 
   i18n = {
     defaultLocale = "en_IE.UTF-8";
@@ -42,15 +53,28 @@ in {
 
   time.timeZone = "Europe/Stockholm";
 
+  environment.variables = {
+    # Without this, Electron apps won't run in `niri`.
+    NIXOS_OZONE_WL = "1";
+  };
+
+  environment.sessionVariables = {
+    FLAKE = flake;
+    EDITOR = "micro";
+    TERMINAL = "kitty";
+    DEFAULT_BROWSER = "firefox";
+  };
+
+  #-----------------------------------------------------------------------------
+  # SERVICES
+
+  networking.networkmanager.enable = true;
+  networking.useDHCP = lib.mkDefault true;
+
   # Enable the RealtimeKit system service.
   # This hands out realtime scheduling priority to user processes on demand.
   # The PulseAudio server uses this to acquire realtime priority.
   security.rtkit.enable = true;
-
-  security.sudo.wheelNeedsPassword = false;
-
-  networking.networkmanager.enable = true;
-  networking.useDHCP = lib.mkDefault true;
 
   services = {
     openssh.enable = true;
@@ -64,28 +88,12 @@ in {
     dbus.enable = true;
   };
 
+  #-----------------------------------------------------------------------------
+  # PACKAGES
+
   nixpkgs.config.allowUnfree = true;
+
   nixpkgs.overlays = [inputs.niri.overlays.niri];
-
-  programs = {
-    xwayland.enable = true;
-
-    niri = {
-      enable = true;
-      package = pkgs.niri-unstable;
-    };
-
-    # Utility for changing screen brightness.
-    #
-    # Decrease brightness by 30%:
-    #   $ light -U 30
-    #
-    # Increase brightness by 30%:
-    #   $ light -A 30
-    light.enable = true;
-
-    dconf.enable = true;
-  };
 
   environment.systemPackages = with pkgs; [
     # Scripts
@@ -171,15 +179,23 @@ in {
     roboto-mono
   ];
 
-  environment.variables = {
-    # Without this, Electron apps won't run in `niri`.
-    NIXOS_OZONE_WL = "1";
-  };
+  programs = {
+    xwayland.enable = true;
 
-  environment.sessionVariables = {
-    FLAKE = flake;
-    EDITOR = "micro";
-    TERMINAL = "kitty";
-    DEFAULT_BROWSER = "firefox";
+    niri = {
+      enable = true;
+      package = pkgs.niri-unstable;
+    };
+
+    # Utility for changing screen brightness.
+    #
+    # Decrease brightness by 30%:
+    #   $ light -U 30
+    #
+    # Increase brightness by 30%:
+    #   $ light -A 30
+    light.enable = true;
+
+    dconf.enable = true;
   };
 }
