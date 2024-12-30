@@ -119,6 +119,7 @@ in {
     nixd
     alejandra
     pciutils
+    buku
 
     # GUI
     xdg-utils
