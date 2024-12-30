@@ -168,6 +168,9 @@ in {
 
     # TODO: Figure out what this is, and if I need it.
     xdg-utils
+
+    # Music player
+    tauon
   ];
 
   fonts.packages = with pkgs; [
