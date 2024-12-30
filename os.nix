@@ -101,10 +101,8 @@ in {
     (script "os" ''sudo nixos-rebuild --flake ${flake}#pad $@'')
     (script "oss" ''os switch'')
 
-    # Nix Helper
+    # CLI
     nh
-
-    # CLI basics
     nushell
     zoxide
     carapace
@@ -118,61 +116,27 @@ in {
     yt-dlp
     git
     dijo
-
-    # Nix language tools
-    # See https://www.youtube.com/watch?v=M_zMoHlbZBY
     nixd
     alejandra
+    pciutils
 
-    # GUI basics
-    wayland
+    # GUI
+    xdg-utils
+    openrazer-daemon
+    networkmanagerapplet
+    pavucontrol
+    wev
+    waybar
+    mako
+    libnotify
+    hyprpaper
     kitty
     firefox-wayland
     vscode.fhs
-
-    # Top bar for WM
-    waybar
-
-    # Wallpaper utility for Hyprland
-    hyprpaper
-
-    # Notification daemon
-    mako
-
-    # Provides `notify-send` command to send desktop notifications
-    libnotify
-
-    # Provides `lscpi` command to query builtin devices
-    pciutils
-
-    # Support for my Razer mouse
-    openrazer-daemon
-    razergenie
-
-    # WIFI widget
-    networkmanagerapplet
-
-    # Audio control panel
-    pavucontrol
-
-    # App launchers
+    emacs
     tofi
     fuzzel
-
-    # Wayland Event Viewer
-    #
-    # Useful when defining keybinds and you need to work out what a certain key
-    # is called. For example, this is how I discovered that the volume keys are
-    # named "XF86AudioLowerVolume" and XF86AudioRaiseVolume".
-    wev
-
-    # TODO: Figure out what this is, and if I need it.
-    xdg-utils
-
-    # Music player
     tauon
-
-    emacs
   ];
 
   fonts.packages = with pkgs; [
