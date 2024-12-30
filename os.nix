@@ -132,6 +132,7 @@ in {
     hyprpaper
     kitty
     firefox-wayland
+    qutebrowser
     vscode.fhs
     emacs
     tofi
