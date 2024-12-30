@@ -23,7 +23,6 @@
       system = "x86_64-linux";
       modules = [
         ./pad.nix
-        ./os.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

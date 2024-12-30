@@ -176,6 +176,4 @@ in {
     TERMINAL = "kitty";
     DEFAULT_BROWSER = "firefox";
   };
-
-  system.stateVersion = "24.05";
 }

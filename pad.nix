@@ -2,7 +2,10 @@
 {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    ./os.nix
   ];
+
+  system.stateVersion = "24.05";
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
@@ -61,6 +64,4 @@
     networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
   };
-
-  system.stateVersion = "24.05";
 }
