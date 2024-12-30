@@ -22,7 +22,7 @@
     nixosConfigurations.pad = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./host.nix
+        ./pad.nix
         ./os.nix
         home-manager.nixosModules.home-manager
         {
