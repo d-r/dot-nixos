@@ -120,6 +120,9 @@ in {
     alejandra
     pciutils
     buku
+    taskwarrior3
+    taskwarrior-tui
+    taskopen
 
     # GUI
     xdg-utils
