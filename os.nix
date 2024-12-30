@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: let
   flake = "/home/dan/sys";
@@ -47,6 +48,9 @@ in {
   security.rtkit.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
+
+  networking.networkmanager.enable = true;
+  networking.useDHCP = lib.mkDefault true;
 
   services = {
     openssh.enable = true;

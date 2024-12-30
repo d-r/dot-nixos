@@ -59,9 +59,5 @@
   };
   swapDevices = [{device = "/dev/disk/by-label/swap";}];
 
-  networking = {
-    hostName = "pad";
-    networkmanager.enable = true;
-    useDHCP = lib.mkDefault true;
-  };
+  networking.hostName = "pad";
 }
