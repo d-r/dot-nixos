@@ -171,6 +171,8 @@ in {
 
     # Music player
     tauon
+
+    emacs
   ];
 
   fonts.packages = with pkgs; [
