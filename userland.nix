@@ -143,6 +143,7 @@ in {
     rofi-wayland
     fuzzel
     tauon
+    papirus-icon-theme
   ];
 
   fonts.packages = with pkgs; [
