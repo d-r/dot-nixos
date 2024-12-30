@@ -3,7 +3,8 @@
   pkgs,
   ...
 }: let
-  dots = config.lib.file.mkOutOfStoreSymlink "/home/dan/sys/dots";
+  dan = "/home/dan";
+  dots = config.lib.file.mkOutOfStoreSymlink "${dan}/sys/dots";
   defaultFont = {
     name = "JetBrains Mono";
     # A size of 10pt should equate to 13px, which is the size that JetBrains
@@ -12,14 +13,18 @@
   };
 in {
   home.username = "dan";
-  home.homeDirectory = "/home/dan";
+  home.homeDirectory = dan;
 
   xdg.enable = true;
 
   xdg.userDirs = {
     enable = true;
-    # Not sure...
-    # createDirectories = true;
+    createDirectories = false;
+
+    download = "${dan}/dl";
+    documents = "${dan}/docs";
+    pictures = "${dan}/images";
+    music = "${dan}/audio";
   };
 
   xdg.configFile = {
