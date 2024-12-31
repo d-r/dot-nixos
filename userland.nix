@@ -108,6 +108,7 @@ in {
     carapace
     fd
     ripgrep
+    yazi
     micro
     bat
     tealdeer
