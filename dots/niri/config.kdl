@@ -102,6 +102,11 @@ prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
+// Needed for xwayland-satellite.
+environment {
+    DISPLAY ":0"
+}
+
 input {
     keyboard {
         xkb {
@@ -152,6 +157,10 @@ window-rule {
 hotkey-overlay {
     skip-at-startup
 }
+
+// Make more X11 apps work, like Emacs.
+// See https://github.com/YaLTeR/niri/wiki/Xwayland
+spawn-at-startup "xwayland-satellite"
 
 // Set the wallpaper
 spawn-at-startup "hyprpaper"

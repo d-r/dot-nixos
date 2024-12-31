@@ -161,6 +161,8 @@ in {
 
     # GUI
 
+    xwayland
+    xwayland-satellite
     xdg-utils
     wev
     waybar
@@ -192,8 +194,6 @@ in {
   ];
 
   programs = {
-    xwayland.enable = true;
-
     niri = {
       enable = true;
       package = pkgs.niri-unstable;
