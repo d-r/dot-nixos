@@ -96,12 +96,20 @@ in {
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   environment.systemPackages = with pkgs; [
-    # Scripts
+    # SCRIPTS
+
+    # Sys flake
     (script "sf" ''nix flake $@ ${flake}'')
     (script "os" ''sudo nixos-rebuild --flake ${flake}#pad $@'')
     (script "oss" ''os switch'')
 
+    # Volume
+    (script "vol-inc" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'')
+    (script "vol-dec" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-'')
+    (script "vol-mute" ''wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'')
+
     # CLI
+
     nh
     nushell
     zoxide
@@ -125,13 +133,12 @@ in {
     taskwarrior3
     taskwarrior-tui
     taskopen
-
-    # Services
     nixd
-    openrazer-daemon
 
     # GUI
+
     xdg-utils
+    openrazer-daemon
     networkmanagerapplet
     pavucontrol
     wev
