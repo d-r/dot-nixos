@@ -5,7 +5,6 @@
   ...
 }: let
   flake = "/home/dan/sys";
-  script = pkgs.writeShellScriptBin;
 in {
   #-----------------------------------------------------------------------------
   # NIX
@@ -107,81 +106,81 @@ in {
 
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
-  environment.systemPackages = with pkgs; [
-    # SCRIPTS
+  environment.systemPackages = let
+    script = pkgs.writeScriptBin;
+    bashScript = pkgs.writeShellScriptBin;
+  in
+    with pkgs; [
+      # SCRIPTS
 
-    # Sys flake
-    (script "sf" ''nix flake $@ ${flake}'')
-    (script "os" ''sudo nixos-rebuild --flake ${flake}#pad $@'')
-    (script "oss" ''os switch'')
+      (script "os" (builtins.readFile ./scripts/os.nu))
+      (bashScript "oss" ''os switch'')
 
-    # Audio
-    (script "vol-inc" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'')
-    (script "vol-dec" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-'')
-    (script "vol-mute" ''wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'')
-    (script "mic-mute" ''pactl set-source-mute @DEFAULT_SOURCE@ toggle'')
+      (bashScript "vol-inc" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'')
+      (bashScript "vol-dec" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-'')
+      (bashScript "vol-mute" ''wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'')
+      (bashScript "mic-mute" ''pactl set-source-mute @DEFAULT_SOURCE@ toggle'')
 
-    # Screen brightness
-    (script "br-inc" ''brightnessctl set 10%+'')
-    (script "br-dec" ''brightnessctl set 10%-'')
+      (bashScript "br-inc" ''brightnessctl set 10%+'')
+      (bashScript "br-dec" ''brightnessctl set 10%-'')
 
-    # CLI
+      # CLI
 
-    nh
-    nushell
-    zoxide
-    carapace
-    fd
-    ripgrep
-    yazi
-    micro
-    bat
-    tealdeer
-    wget
-    curl
-    rsync
-    unar
-    yt-dlp
-    git
-    dijo
-    alejandra
-    pciutils
-    buku
-    taskwarrior3
-    taskwarrior-tui
-    taskopen
-    nixd
+      nh
+      nushell
+      zoxide
+      carapace
+      fd
+      ripgrep
+      yazi
+      micro
+      bat
+      tealdeer
+      wget
+      curl
+      rsync
+      unar
+      yt-dlp
+      git
+      dijo
+      alejandra
+      pciutils
+      buku
+      taskwarrior3
+      taskwarrior-tui
+      taskopen
+      nixd
 
-    # HARDWARE
+      # HARDWARE
 
-    brightnessctl
-    openrazer-daemon
-    networkmanagerapplet
-    pavucontrol
+      brightnessctl
+      openrazer-daemon
+      networkmanagerapplet
+      pavucontrol
 
-    # GUI
+      # GUI
 
-    xwayland
-    xwayland-satellite
-    xdg-utils
-    wev
-    waybar
-    mako
-    libnotify
-    hyprpaper
-    kitty
-    firefox-wayland
-    qutebrowser
-    vscode.fhs
-    emacs
-    tofi
-    rofi-wayland
-    fuzzel
-    tauon
-    papirus-icon-theme
-    nautilus
-    ulauncher
-  ];
+      xwayland
+      xwayland-satellite
+      xdg-utils
+      wev
+      waybar
+      mako
+      libnotify
+      hyprpaper
+      kitty
+      firefox-wayland
+      qutebrowser
+      vscode.fhs
+      emacs
+      tofi
+      rofi-wayland
+      fuzzel
+      tauon
+      papirus-icon-theme
+      nautilus
+      ulauncher
+    ];
 
   fonts.packages = with pkgs; [
     jetbrains-mono
