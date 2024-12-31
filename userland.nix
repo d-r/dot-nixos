@@ -165,6 +165,7 @@ in {
     fuzzel
     tauon
     papirus-icon-theme
+    nautilus
   ];
 
   fonts.packages = with pkgs; [
