@@ -80,6 +80,18 @@ binds {
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
+
+    // Audio keys
+
+    XF86AudioRaiseVolume { spawn "vol-inc"; }
+    XF86AudioLowerVolume { spawn "vol-dec"; }
+    XF86AudioMute { spawn "vol-mute"; }
+    XF86AudioMicMute { spawn "mic-mute"; }
+
+    // Brightness keys
+
+    XF86MonBrightnessUp { spawn "br-inc"; }
+    XF86MonBrightnessDown { spawn "br-dec"; }
 }
 
 //------------------------------------------------------------------------------
