@@ -20,17 +20,14 @@
 }
 
 #workspaces button {
-    border-top: 2px solid transparent;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #888888;
+    color: #777;
 }
 #workspaces button.active {
     border-color: #4c7899;
     color: white;
-    background-color: #285577;
+    background-color: #222;
 }
 #workspaces button.urgent {
     border-color: #c9545d;
@@ -43,6 +40,18 @@
 #pulseaudio,
 #language {
     padding-left: 20px;
+}
+
+#pulseaudio.muted {
+    color: red;
+}
+
+#battery.warning {
+    color: yellow;
+}
+
+#battery.critical {
+    color: red;
 }
 
 #network.disconnected {

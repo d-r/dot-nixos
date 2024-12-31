@@ -18,22 +18,30 @@
     ],
 
     "pulseaudio": {
-        "format": "<span foreground=\"#777\">VOL</span> {volume}%",
-        "format-muted": "<span foreground=\"#777\">VOL</span> <s>{volume}%</s>"
+        "format": "{volume}% <span foreground=\"#777\">{icon}</span>",
+        "format-muted": "<s>{volume}%</s> <span foreground=\"#777\">{icon}</span>",
+        "format-icons": ["VOL"]
     },
     "backlight": {
-        "format": "<span foreground=\"#777\">BL</span> {percent}%"
+        "format": "{percent}% <span foreground=\"#777\">{icon}</span>",
+        "format-icons": ["BR"]
     },
     "battery": {
-        "interval": 10,
-        "format": "<span foreground=\"#777\">AC</span> {capacity}%",
-        "format-discharging": "<span foreground=\"#777\">BAT</span> {capacity}%",
+        "interval": 5,
+        "states": {
+            "warning": 30,
+            "critical": 10
+        },
+        "format": "{capacity}% <span foreground=\"white\">{icon}</span>",
+        "format-discharging": "{capacity}% <span foreground=\"#777\">{icon}</span>",
+        "format-icons": ["BAT"],
         "tooltip": false
     },
     "network": {
         "interval": 5,
-        "format": "<span foreground=\"#777\">WIFI</span> {signalStrength}%",
+        "format": "{signalStrength}% <span foreground=\"#777\">{icon}</span>",
         "format-disconnected": "OFFLINE",
+        "format-icons": ["WIFI"],
         "tooltip-format": "{essid}\n{ipaddr}\n{ifname}"
     },
     "clock": {
