@@ -3,7 +3,7 @@
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
-    Mod+Shift+Delete { quit; }
+    Mod+Shift+Delete { quit skip-confirmation=true; }
     // Mod+Shift+P { power-off-monitors; }
     Mod+W { close-window; }
 
