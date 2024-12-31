@@ -158,6 +158,8 @@ in {
     roboto
     roboto-slab
     roboto-mono
+    cantarell-fonts
+    font-awesome
   ];
 
   programs = {
