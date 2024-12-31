@@ -106,6 +106,8 @@ in {
     nushell
     zoxide
     carapace
+    fd
+    ripgrep
     micro
     bat
     tealdeer
@@ -116,7 +118,6 @@ in {
     yt-dlp
     git
     dijo
-    nixd
     alejandra
     pciutils
     buku
@@ -124,9 +125,12 @@ in {
     taskwarrior-tui
     taskopen
 
+    # Services
+    nixd
+    openrazer-daemon
+
     # GUI
     xdg-utils
-    openrazer-daemon
     networkmanagerapplet
     pavucontrol
     wev
