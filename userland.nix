@@ -135,12 +135,16 @@ in {
     taskopen
     nixd
 
-    # GUI
+    # HARDWARE
 
-    xdg-utils
+    brightnessctl
     openrazer-daemon
     networkmanagerapplet
     pavucontrol
+
+    # GUI
+
+    xdg-utils
     wev
     waybar
     mako
@@ -176,15 +180,6 @@ in {
       enable = true;
       package = pkgs.niri-unstable;
     };
-
-    # Utility for changing screen brightness.
-    #
-    # Decrease brightness by 30%:
-    #   $ light -U 30
-    #
-    # Increase brightness by 30%:
-    #   $ light -A 30
-    light.enable = true;
 
     dconf.enable = true;
   };
