@@ -128,6 +128,14 @@ in {
       tab_bar_edge = "top";
       active_tab_font_style = "normal"; # Default is "italic"
     };
+    keybindings = {
+      "ctrl+t" = "new_tab";
+      "ctrl+w" = "close_tab";
+      "ctrl+page_up" = "previous_tab";
+      "ctrl+page_down" = "next_tab";
+      "ctrl+shift+page_up" = "move_tab_backward";
+      "ctrl+shift+page_down" = "move_tab_forward";
+    };
   };
 
   programs.qutebrowser = {
