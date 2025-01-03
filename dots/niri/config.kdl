@@ -5,7 +5,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Delete { quit skip-confirmation=true; }
 
-    Mod+W { close-window; }
+    Mod+Q { close-window; }
 
     // Run programs
 
@@ -61,13 +61,11 @@ binds {
 
     // Resize
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
 
+    Mod+0 { set-column-width "50%"; }
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
     Mod+Shift+Minus { set-window-height "-10%"; }
