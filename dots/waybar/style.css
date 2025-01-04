@@ -12,7 +12,7 @@
 }
 
 #waybar {
-    background: black;
+    background-color: rgba(0, 0, 0, 0.7);
     color: #bbb;
     font-family: "JetBrains Mono", sans-serif;
     font-weight: bold;
