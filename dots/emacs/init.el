@@ -80,9 +80,6 @@
 ;;------------------------------------------------------------------------------
 ;; APPEARANCE
 
-;; TODO: Set font in early init?
-(set-frame-font "JetBrains Mono 13" nil t)
-
 ;; Show column number in the modeline.
 (column-number-mode 1)
 

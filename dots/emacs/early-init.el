@@ -35,3 +35,6 @@
 ;; Disable the welcome screen and dump me straight into the scratch buffer on
 ;; startup instead.
 (setq inhibit-startup-screen t)
+
+;; Set the default font.
+(add-to-alist 'default-frame-alist '(font . "JetBrains Mono-13"))
