@@ -156,7 +156,6 @@ in {
       # HARDWARE
 
       brightnessctl
-      openrazer-daemon
       networkmanagerapplet
       pavucontrol
 

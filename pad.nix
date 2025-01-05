@@ -46,8 +46,6 @@
       enable = true;
       extraPackages = [pkgs.amdvlk];
     };
-
-    openrazer.enable = true;
   };
 
   fileSystems = {
