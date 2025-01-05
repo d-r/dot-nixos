@@ -87,6 +87,10 @@ in {
       jack.enable = true;
     };
 
+    # Disable PulseAudio as it conflicts with PipeWire.
+    # TODO: Verify that this is actually needed.
+    pulseaudio.enable = false;
+
     dbus.enable = true;
 
     gnome.gnome-keyring.enable = true;

@@ -40,9 +40,6 @@
       extraPackages = with pkgs; [amdvlk];
     };
 
-    # Disable PulseAudio as it conflicts with PipeWire.
-    pulseaudio.enable = false;
-
     openrazer.enable = true;
   };
 
