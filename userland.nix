@@ -178,6 +178,7 @@ in {
       alejandra
       rustup
       swift
+      zig
       jetbrains.rust-rover
       jetbrains.clion
     ];
