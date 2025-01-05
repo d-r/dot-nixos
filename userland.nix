@@ -177,6 +177,7 @@ in {
       nixd
       alejandra
       rustup
+      swift
       jetbrains.rust-rover
       jetbrains.clion
     ];
