@@ -56,12 +56,6 @@ in {
     enableNushellIntegration = true;
   };
 
-  programs.carapace = {
-    enable = true;
-    enableBashIntegration = true;
-    enableNushellIntegration = true;
-  };
-
   programs.tealdeer = {
     enable = true;
     settings = {

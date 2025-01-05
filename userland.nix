@@ -131,7 +131,6 @@ in {
       nh
       nushell
       zoxide
-      carapace
       fd
       ripgrep
       yazi
