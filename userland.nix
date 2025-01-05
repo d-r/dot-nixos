@@ -141,28 +141,21 @@ in {
       rsync
       unar
       yt-dlp
-      git
       dijo
-      alejandra
       buku
       taskwarrior3
       taskwarrior-tui
       taskopen
-      nixd
       neofetch
-      rustup
-
-      # HARDWARE
-
-      brightnessctl
-      networkmanagerapplet
-      pavucontrol
 
       # GUI
 
       xwayland
       xwayland-satellite
       xdg-utils
+      networkmanagerapplet
+      brightnessctl
+      pavucontrol
       wev
       waybar
       mako
@@ -177,6 +170,15 @@ in {
       tauon
       papirus-icon-theme
       nautilus
+
+      # DEV
+
+      git
+      nixd
+      alejandra
+      rustup
+      jetbrains.rust-rover
+      jetbrains.clion
     ];
 
   fonts.packages = with pkgs; [
