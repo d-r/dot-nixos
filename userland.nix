@@ -35,6 +35,9 @@ in {
     ];
   };
 
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
+
   security.sudo.wheelNeedsPassword = false;
 
   #-----------------------------------------------------------------------------
@@ -197,12 +200,10 @@ in {
     nerd-fonts.iosevka
   ];
 
-  programs = {
-    niri = {
-      enable = true;
-      package = pkgs.niri-unstable;
-    };
-
-    dconf.enable = true;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
   };
+
+  programs.dconf.enable = true;
 }
