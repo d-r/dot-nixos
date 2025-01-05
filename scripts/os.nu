@@ -7,7 +7,7 @@ def "main switch" [] {
 
 # Build and test the new configuration
 def "main test" [] {
-    sudo nixos-rebuild--flake ~/sys#pad test
+    sudo nixos-rebuild --flake ~/sys#pad test
 }
 
 # Update Flake inputs
