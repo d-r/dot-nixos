@@ -1,5 +1,12 @@
-{ lib, config, pkgs, modulesPath, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  modulesPath,
+  ...
+}: {
+  # ThinkPad L13 Gen 4 (AMD)
+
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     ./userland.nix
@@ -7,7 +14,7 @@
 
   system.stateVersion = "24.05";
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  networking.hostName = "pad";
 
   boot = {
     # Use latest kernel. Need this for WIFI to work.
@@ -17,7 +24,7 @@
 
     initrd = {
       kernelModules = ["amdgpu"];
-      availableKernelModules = [ 
+      availableKernelModules = [
         "nvme"
         "xhci_pci"
         "usb_storage"
@@ -37,7 +44,7 @@
 
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [amdvlk];
+      extraPackages = [pkgs.amdvlk];
     };
 
     openrazer.enable = true;
@@ -54,6 +61,4 @@
     };
   };
   swapDevices = [{device = "/dev/disk/by-label/swap";}];
-
-  networking.hostName = "pad";
 }

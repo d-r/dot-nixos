@@ -12,6 +12,7 @@
     size = 10;
   };
 in {
+  home.stateVersion = "24.05";
   home.username = "dan";
   home.homeDirectory = dan;
 
@@ -36,11 +37,11 @@ in {
     "niri".source = "${dots}/niri";
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    plugins = [pkgs.hyprlandPlugins.hyprscroller];
-    extraConfig = "source = settings.conf";
-  };
+  #-----------------------------------------------------------------------------
+  # CLI
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -73,8 +74,6 @@ in {
     };
   };
 
-  # To generate a new SSH key for GitHub:
-  # ssh-keygen -t ed25519 -C "9402+d-r@users.noreply.github.com"
   programs.git = {
     enable = true;
     package = pkgs.gitAndTools.gitFull;
@@ -113,6 +112,15 @@ in {
     };
   };
 
+  #-----------------------------------------------------------------------------
+  # GUI
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    plugins = [pkgs.hyprlandPlugins.hyprscroller];
+    extraConfig = "source = settings.conf";
+  };
+
   programs.kitty = {
     enable = true;
     themeFile = "VSCode_Dark";
@@ -140,9 +148,4 @@ in {
   programs.qutebrowser = {
     enable = true;
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  home.stateVersion = "24.05";
 }

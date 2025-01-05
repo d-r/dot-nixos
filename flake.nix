@@ -1,19 +1,6 @@
 {
   description = "Dan's NixOS configuration";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # hyprland.url = "github:hyprwm/Hyprland";
-
-    niri.url = "github:sodiboo/niri-flake";
-  };
-
   outputs = {
     nixpkgs,
     home-manager,
@@ -33,5 +20,18 @@
       ];
       specialArgs = {inherit inputs;};
     };
+  };
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri.url = "github:sodiboo/niri-flake";
+
+    # hyprland.url = "github:hyprwm/Hyprland";
   };
 }
