@@ -182,13 +182,10 @@ in {
       qutebrowser
       vscode.fhs
       emacs
-      tofi
       rofi-wayland
-      fuzzel
       tauon
       papirus-icon-theme
       nautilus
-      ulauncher
     ];
 
   fonts.packages = with pkgs; [
