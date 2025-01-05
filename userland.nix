@@ -187,10 +187,6 @@ in {
     roboto-slab
     roboto-mono
     cantarell-fonts
-    font-awesome
-
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.iosevka
   ];
 
   programs.niri = {
