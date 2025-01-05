@@ -144,7 +144,6 @@ in {
       git
       dijo
       alejandra
-      pciutils
       buku
       taskwarrior3
       taskwarrior-tui
