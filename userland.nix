@@ -159,6 +159,7 @@ in {
       taskopen
       nixd
       neofetch
+      rustup
 
       # HARDWARE
 
