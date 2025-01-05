@@ -158,6 +158,7 @@ in {
       taskwarrior-tui
       taskopen
       nixd
+      neofetch
 
       # HARDWARE
 
