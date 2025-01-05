@@ -137,8 +137,4 @@ in {
       "ctrl+shift+page_down" = "move_tab_forward";
     };
   };
-
-  programs.qutebrowser = {
-    enable = true;
-  };
 }
