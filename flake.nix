@@ -16,7 +16,6 @@
           home-manager.useUserPackages = true;
           home-manager.users.dan = import ./home.nix;
         }
-        # hyprland.homeManagerModules.default
       ];
       specialArgs = {inherit inputs;};
     };
@@ -31,7 +30,5 @@
     };
 
     niri.url = "github:sodiboo/niri-flake";
-
-    # hyprland.url = "github:hyprwm/Hyprland";
   };
 }

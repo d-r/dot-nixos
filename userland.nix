@@ -13,15 +13,7 @@ in {
   # TODO: Document why this is needed.
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
-  nix.settings = {
-    experimental-features = "nix-command flakes";
-
-    # Avoid building Hyprland from source.
-    # See https://wiki.hyprland.org/Nix/Cachix/.
-    # TODO: Figure out of this actually does anything... Not sure it does.
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
+  nix.settings.experimental-features = "nix-command flakes";
 
   #-----------------------------------------------------------------------------
   # USERS

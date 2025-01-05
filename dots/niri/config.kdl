@@ -166,6 +166,6 @@ spawn-at-startup "mako"
 
 // Launch the top bar
 // Can't use "~/.config/..." here, as only the absolute path works.
-spawn-at-startup "waybar" "-c" "/home/dan/.config/waybar/config.niri.jsonc"
+spawn-at-startup "waybar"
 
 spawn-at-startup "code"
