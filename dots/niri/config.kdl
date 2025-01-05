@@ -96,7 +96,7 @@ binds {
 // Remove titlebars from windows.
 prefer-no-csd
 
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/images/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
 // Needed for xwayland-satellite.
 environment {
