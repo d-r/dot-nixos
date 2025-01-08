@@ -162,6 +162,7 @@ in {
       libnotify
       swaybg
       kitty
+      alacritty
       firefox-wayland
       qutebrowser
       vscode.fhs
