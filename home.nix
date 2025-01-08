@@ -31,7 +31,6 @@ in {
   xdg.configFile = {
     "emacs/early-init.el".source = "${dots}/emacs/early-init.el";
     "emacs/init.el".source = "${dots}/emacs/init.el";
-    "hypr/hyprpaper.conf".source = "${dots}/hyprpaper.conf";
     "waybar".source = "${dots}/waybar";
     "niri".source = "${dots}/niri";
   };

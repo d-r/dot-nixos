@@ -160,7 +160,7 @@ in {
       waybar
       mako
       libnotify
-      hyprpaper
+      swaybg
       kitty
       firefox-wayland
       qutebrowser
