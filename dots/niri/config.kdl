@@ -4,7 +4,6 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Delete { quit skip-confirmation=true; }
-
     Mod+Q { close-window; }
 
     // Run programs
@@ -93,13 +92,13 @@ binds {
 //------------------------------------------------------------------------------
 // SETTINGS
 
-// Remove titlebars from windows.
+// Remove decorations from windows.
 prefer-no-csd
 
 screenshot-path "~/images/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
-// Needed for xwayland-satellite.
 environment {
+    // Needed for xwayland-satellite.
     DISPLAY ":0"
 }
 
@@ -151,34 +150,17 @@ layout {
 }
 
 //------------------------------------------------------------------------------
-// WINDOW RULES
-
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
-
-//------------------------------------------------------------------------------
 // STARTUP
 
 hotkey-overlay {
     skip-at-startup
 }
 
-// Make more X11 apps work, like Emacs.
+// Make more X11 apps work. Emacs doesn't run without this, for example.
 // See https://github.com/YaLTeR/niri/wiki/Xwayland
 spawn-at-startup "xwayland-satellite"
 
-// Set the wallpaper
 spawn-at-startup "hyprpaper"
-
-// Start notification daemon
 spawn-at-startup "mako"
-
-// Launch the top bar
-// Can't use "~/.config/..." here, as only the absolute path works.
 spawn-at-startup "waybar"
-
 spawn-at-startup "code"
