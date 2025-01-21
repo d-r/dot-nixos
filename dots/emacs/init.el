@@ -1,5 +1,10 @@
 ;;; -*- lexical-binding: t -*-
 
+;; This config assumes Emacs 29 or later.
+;;
+;; Sources:
+;; https://protesilaos.com/codelog/2024-11-28-basic-emacs-configuration/
+
 ;;------------------------------------------------------------------------------
 ;; SANITY
 
@@ -53,26 +58,11 @@
 
 ;;------------------------------------------------------------------------------
 ;; PACKAGE MANAGEMENT
-;;
-;; TODO: Figure out how much of this is actually needed.
 
 (require 'package)
-
-(setq package-archives
-      '(("melpa" . "https://melpa.org/packages/")
-        ("org" . "https://orgmode.org/elpa/")
-	;; Needed for "compat" package:
-        ("elpa" . "https://elpa.gnu.org/packages/"))) 
-
 (package-initialize)
 
-;; Update the package metadata is the local cache is missing
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;; Initialise use-package on non-Linux platforms.
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (require 'use-package)
 (setq use-package-always-ensure t)
