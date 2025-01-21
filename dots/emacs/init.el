@@ -54,7 +54,12 @@
 
 ;; Use ripgrep instead of grep for scraping files.
 ;; This should speed up Denote's backlink buffer creation.
-(setq xref-search-program 'ripgrep)
+;;
+;; Disabled this, because now and then I would get an error message when calling
+;; `denote-open-or-create`.
+;; TODO: Figure out what the problem is.
+;;
+;; (setq xref-search-program 'ripgrep)
 
 ;;------------------------------------------------------------------------------
 ;; PACKAGE MANAGEMENT
