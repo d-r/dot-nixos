@@ -179,16 +179,20 @@
 (use-package magit)
 
 ;;------------------------------------------------------------------------------
-;; PERSONAL INFORMATION MANAGEMENT
+;; ORG
+
+(use-package org
+  :config
+  (setq org-startup-indented t)
+  (setq org-support-shift-select t))
 
 ;; Make weeks start on Monday instead of on Sunday.
 (use-package calendar
   :config
   (setq calendar-week-start-day 1))
 
-(use-package org
-  :config
-  (setq org-startup-indented t))
+;;------------------------------------------------------------------------------
+;; DENOTE
 
 (use-package denote
   :init
