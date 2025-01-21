@@ -37,4 +37,4 @@
 (setq inhibit-startup-screen t)
 
 ;; Set the default font.
-(add-to-alist 'default-frame-alist '(font . "JetBrains Mono-13"))
+(add-to-list 'default-frame-alist '(font . "JetBrains Mono-13"))
