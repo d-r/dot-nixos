@@ -175,6 +175,7 @@ in {
       # DEV
 
       git
+      just
       nixd
       alejandra
       rustup
