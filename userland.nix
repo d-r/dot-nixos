@@ -45,12 +45,8 @@
 
   time.timeZone = "Europe/Stockholm";
 
-  environment.variables = {
-    # Without this, Electron apps won't run in `niri`.
-    NIXOS_OZONE_WL = "1";
-  };
-
   environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; # Without this, Electron apps won't run in `niri`.
     EDITOR = "micro";
     TERMINAL = "kitty";
     DEFAULT_BROWSER = "firefox";
