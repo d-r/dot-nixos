@@ -11,6 +11,10 @@ in:
 test:
     sudo nixos-rebuild --flake . test
 
+# Check that the flake is not broken
+check:
+    nix flake check
+
 # Update flake inputs
 up:
     nix flake update
