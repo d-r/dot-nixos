@@ -3,9 +3,7 @@
   pkgs,
   lib,
   ...
-}: let
-  flake = "/home/dan/sys";
-in {
+}: {
   #-----------------------------------------------------------------------------
   # NIX
 
@@ -53,7 +51,6 @@ in {
   };
 
   environment.sessionVariables = {
-    FLAKE = flake;
     EDITOR = "micro";
     TERMINAL = "kitty";
     DEFAULT_BROWSER = "firefox";
@@ -123,7 +120,6 @@ in {
 
       # CLI
 
-      nh
       nushell
       zoxide
       fd
