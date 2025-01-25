@@ -95,6 +95,13 @@ in {
 
       co = "checkout";
       pf = "push --force";
+
+      nb = "new-branch";
+      db = "delete-branch";
+      drb = "delete-remote-branch";
+      rb = "rename-branch";
+      mv = "move-branch";
+
       new-branch = "checkout -b";
       delete-branch = "branch -D";
       delete-remote-branch = "push origin --delete";
