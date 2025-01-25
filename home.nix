@@ -16,16 +16,17 @@ in {
   home.username = "dan";
   home.homeDirectory = dan;
 
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
   xdg.enable = true;
 
   xdg.userDirs = {
     enable = true;
-    createDirectories = false;
-
-    download = "${dan}/dl";
-    documents = "${dan}/docs";
-    pictures = "${dan}/images";
-    music = "${dan}/audio";
+    download = "$HOME/dl";
+    documents = "$HOME/docs";
+    pictures = "$HOME/images";
+    music = "$HOME/audio";
   };
 
   xdg.configFile = {
@@ -34,12 +35,6 @@ in {
     "waybar".source = "${dots}/waybar";
     "niri".source = "${dots}/niri";
   };
-
-  #-----------------------------------------------------------------------------
-  # CLI
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -135,9 +130,6 @@ in {
       remotes = "remote -v";
     };
   };
-
-  #-----------------------------------------------------------------------------
-  # GUI
 
   programs.kitty = {
     enable = true;
