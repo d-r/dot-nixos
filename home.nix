@@ -77,6 +77,10 @@ in {
     package = pkgs.gitAndTools.gitFull;
     userName = "Daniel Rosengren";
     userEmail = "9402+d-r@users.noreply.github.com";
+    ignores = [
+      # macOS Finder detritus
+      ".DS_Store"
+    ];
     extraConfig = {
       init.defaultBranch = "main";
     };
