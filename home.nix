@@ -83,6 +83,9 @@ in {
     ];
     extraConfig = {
       init.defaultBranch = "main";
+      # Removes the need to do "git push --set-upstream origin <branch>" for
+      # a branch that doesn't yet exist upstream.
+      push.autoSetupRemote = true;
     };
     aliases = {
       st = "status --short";
