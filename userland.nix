@@ -101,10 +101,14 @@
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   environment.systemPackages = let
+    script = pkgs.writeScriptBin;
     bashScript = pkgs.writeShellScriptBin;
   in
     with pkgs; [
       # SCRIPTS
+
+      (script "os" (builtins.readFile ./scripts/os.nu))
+      (bashScript "oss" ''os switch'')
 
       (bashScript "vol-inc" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'')
       (bashScript "vol-dec" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-'')
