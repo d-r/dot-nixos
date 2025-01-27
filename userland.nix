@@ -135,9 +135,6 @@
       yt-dlp
       dijo
       buku
-      taskwarrior3
-      taskwarrior-tui
-      taskopen
       neofetch
 
       # GUI

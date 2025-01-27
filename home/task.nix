@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  home.packages = [
+    pkgs.taskwarrior-tui
+    pkgs.taskopen
+  ];
+
   programs.taskwarrior = {
     enable = true;
     package = pkgs.taskwarrior3;
