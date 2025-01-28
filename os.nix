@@ -101,22 +101,18 @@
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   environment.systemPackages = let
-    script = pkgs.writeScriptBin;
-    bashScript = pkgs.writeShellScriptBin;
+    script = pkgs.writeShellScriptBin;
   in
     with pkgs; [
       # SCRIPTS
 
-      (script "os" (builtins.readFile ./scripts/os.nu))
-      (bashScript "oss" ''os switch'')
+      (script "vol-inc" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'')
+      (script "vol-dec" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-'')
+      (script "vol-mute" ''wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'')
+      (script "mic-mute" ''pactl set-source-mute @DEFAULT_SOURCE@ toggle'')
 
-      (bashScript "vol-inc" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'')
-      (bashScript "vol-dec" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-'')
-      (bashScript "vol-mute" ''wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'')
-      (bashScript "mic-mute" ''pactl set-source-mute @DEFAULT_SOURCE@ toggle'')
-
-      (bashScript "br-inc" ''brightnessctl set 10%+'')
-      (bashScript "br-dec" ''brightnessctl set 10%-'')
+      (script "br-inc" ''brightnessctl set 10%+'')
+      (script "br-dec" ''brightnessctl set 10%-'')
 
       # CLI
 
