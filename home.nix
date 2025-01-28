@@ -4,7 +4,7 @@
   ...
 }: let
   dan = "/home/dan";
-  dots = config.lib.file.mkOutOfStoreSymlink "${dan}/sys/dots";
+  dots = config.lib.file.mkOutOfStoreSymlink "${dan}/sys/home";
   defaultFont = {
     name = "JetBrains Mono";
     # A size of 10pt should equate to 13px, which is the size that JetBrains
@@ -45,8 +45,8 @@ in {
 
   programs.nushell = {
     enable = true;
-    envFile.source = ./dots/nushell/env.nu;
-    configFile.source = ./dots/nushell/config.nu;
+    envFile.source = ./home/nushell/env.nu;
+    configFile.source = ./home/nushell/config.nu;
   };
 
   programs.zoxide = {
