@@ -45,8 +45,8 @@ in {
 
   programs.nushell = {
     enable = true;
-    envFile.source = ./home/nushell/env.nu;
-    configFile.source = ./home/nushell/config.nu;
+    envFile.source = ./nushell/env.nu;
+    configFile.source = ./nushell/config.nu;
   };
 
   programs.zoxide = {
