@@ -154,4 +154,12 @@ in {
       "ctrl+shift+page_down" = "move_tab_forward";
     };
   };
+
+  # TODO: Tweak appearance.
+  # https://nix-community.github.io/home-manager/options.xhtml#opt-services.mako.enable
+  services.mako = {
+    enable = true;
+    # 5 seconds in milliseconds.
+    defaultTimeout = 5000;
+  };
 }
