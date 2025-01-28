@@ -160,7 +160,7 @@ hotkey-overlay {
 // See https://github.com/YaLTeR/niri/wiki/Xwayland
 spawn-at-startup "xwayland-satellite"
 
-spawn-at-startup "swaybg" "--image" "/home/dan/sys/wallpapers/alena-aenami-all-i-need-1080p.jpg"
+spawn-at-startup "swaybg" "--image" "/home/dan/dot/wallpapers/alena-aenami-all-i-need-1080p.jpg"
 spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "code"

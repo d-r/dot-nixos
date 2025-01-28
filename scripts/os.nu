@@ -2,17 +2,17 @@
 
 # Build and activate the new configuration
 def "main switch" [] {
-    sudo nixos-rebuild --flake ~/sys#pad switch
+    sudo nixos-rebuild --flake ~/dot switch
 }
 
 # Build and test the new configuration
 def "main test" [] {
-    sudo nixos-rebuild --flake ~/sys#pad test
+    sudo nixos-rebuild --flake ~/dot test
 }
 
 # Update Flake inputs
 def "main pull" [] {
-    nix flake update --flake ~/sys
+    nix flake update --flake ~/dot
 }
 
 # Collect garbage (remove old revisions)

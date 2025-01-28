@@ -4,7 +4,7 @@
   ...
 }: let
   dan = "/home/dan";
-  dots = config.lib.file.mkOutOfStoreSymlink "${dan}/sys/home";
+  dots = config.lib.file.mkOutOfStoreSymlink "${dan}/dot/home";
   defaultFont = {
     name = "JetBrains Mono";
     # A size of 10pt should equate to 13px, which is the size that JetBrains
