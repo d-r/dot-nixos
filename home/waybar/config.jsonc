@@ -27,11 +27,11 @@
     "battery": {
         "interval": 5,
         "states": {
-            "warning": 30,
+            "warning": 20,
             "critical": 10
         },
         "format": "{capacity}% <span foreground=\"#777\">BA</span>",
-        "format-plugged": "{capacity}% <span foreground=\"white\">AC</span>",
+        "format-charging": "{capacity}% <span foreground=\"white\">AC</span>",
         "tooltip": false
     },
     "network": {
