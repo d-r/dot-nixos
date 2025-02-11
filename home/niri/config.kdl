@@ -14,7 +14,7 @@ binds {
     Mod+E { spawn "code"; }
     Mod+B { spawn "firefox"; }
 
-    // Focus columns
+    // Focus column
 
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }
@@ -22,12 +22,12 @@ binds {
     Mod+Home { focus-column-first; }
     Mod+End { focus-column-last; }
 
-    // Focus windows
+    // Focus window
 
     Mod+Grave { focus-window-down-or-top; }
     Mod+Tab { focus-window-previous; }
 
-    // Focus workspaces
+    // Focus workspace
 
     Mod+Up { focus-workspace-up; }
     Mod+Down { focus-workspace-down; }
@@ -42,12 +42,12 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
 
-    // Focus monitors
+    // Focus monitor
 
     Mod+BracketLeft { focus-monitor-left; }
     Mod+BracketRight { focus-monitor-right; }
 
-    // Move columns
+    // Move column
 
     Mod+Shift+Left { move-column-left-or-to-monitor-left; }
     Mod+Shift+Right { move-column-right-or-to-monitor-right; }
@@ -71,7 +71,7 @@ binds {
     Mod+Shift+BracketLeft { move-column-to-monitor-left; }
     Mod+Shift+BracketRight { move-column-to-monitor-right; }
 
-    // Move workspaces
+    // Move workspace
 
     Mod+Alt+Up { move-workspace-up; }
     Mod+Alt+Down { move-workspace-down; }
@@ -91,7 +91,7 @@ binds {
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
 
-    // Take screenshots
+    // Take screenshot
 
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
