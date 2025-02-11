@@ -130,15 +130,12 @@
       unar
       yt-dlp
       dijo
-      buku
       taskwarrior3
       taskwarrior-tui
-      taskopen
       neofetch
 
       # GUI
 
-      xwayland
       xwayland-satellite
       xdg-utils
       networkmanagerapplet
@@ -157,7 +154,6 @@
       emacs
       rofi-wayland
       tauon
-      papirus-icon-theme
       nautilus
 
       # DEV
@@ -167,8 +163,6 @@
       nixd
       alejandra
       rustup
-      swift
-      zig
       jetbrains.rust-rover
       jetbrains.clion
     ];
