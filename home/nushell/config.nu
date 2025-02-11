@@ -6,8 +6,11 @@ alias e = ^($env.EDITOR)
 alias j = just
 alias t = task
 alias topen = taskopen
-alias gc = git clone
 alias yt = yt-dlp
+
+alias gs = git st
+alias gd = git diff
+alias gc = git clone
 
 def l [...xs] {
     let xs = if $xs == [] { ["."] } else { $xs }
