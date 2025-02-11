@@ -122,6 +122,7 @@
       ripgrep
       yazi
       micro
+      neovim
       bat
       tealdeer
       wget
