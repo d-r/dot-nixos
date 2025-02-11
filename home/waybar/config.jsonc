@@ -17,12 +17,17 @@
         "clock"
     ],
 
+    "niri/window": {
+        "separate-outputs": true
+    },
     "pulseaudio": {
         "format": "{volume}% <span foreground=\"#777\">VO</span>",
-        "format-muted": "<s>{volume}%</s> <span foreground=\"#777\">VO</span>"
+        "format-muted": "<s>{volume}%</s> <span foreground=\"#777\">VO</span>",
+        "on-click": "pavucontrol"
     },
     "backlight": {
-        "format": "{percent}% <span foreground=\"#777\">BR</span>"
+        "format": "{percent}% <span foreground=\"#777\">BR</span>",
+        "tooltip": false
     },
     "battery": {
         "interval": 5,
