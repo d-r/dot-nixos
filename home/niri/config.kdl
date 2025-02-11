@@ -78,6 +78,8 @@ binds {
 
     // Layout
 
+    Mod+R { switch-preset-column-width; }
+
     Mod+Comma { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
 
@@ -172,8 +174,6 @@ input {
 
 layout {
     gaps 8
-    center-focused-column "never"
-    default-column-width { proportion 0.5; }
     default-column-display "tabbed"
 
     tab-indicator {
@@ -187,6 +187,14 @@ layout {
 
     focus-ring {
         off
+    }
+
+    center-focused-column "never"
+    default-column-width { proportion 0.5; }
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
     }
 }
 
