@@ -4,7 +4,8 @@
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Delete { quit skip-confirmation=true; }
-    Mod+Q { close-window; }
+
+    Mod+W { close-window; }
 
     // Run programs
 
@@ -13,16 +14,23 @@ binds {
     Mod+E { spawn "code"; }
     Mod+B { spawn "firefox"; }
 
-    // Focus
+    // Focus columns
 
-    Mod+Left { focus-column-left; }
-    Mod+Right { focus-column-right; }
+    Mod+Left { focus-column-or-monitor-left; }
+    Mod+Right { focus-column-or-monitor-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End { focus-column-last; }
 
-    Mod+Down { focus-workspace-down; }
+    // Focus windows
+
+    Mod+Grave { focus-window-down-or-top; }
+    Mod+Tab { focus-window-previous; }
+
+    // Focus workspaces
+
     Mod+Up { focus-workspace-up; }
+    Mod+Down { focus-workspace-down; }
 
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
@@ -34,31 +42,36 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
 
-    // Move
+    // Move columns
 
-    Mod+Alt+Left { move-column-left; }
-    Mod+Alt+Right { move-column-right; }
+    Mod+Shift+Left { move-column-left-or-to-monitor-left; }
+    Mod+Shift+Right { move-column-right-or-to-monitor-right; }
 
-    Mod+Alt+Home { move-column-to-first; }
-    Mod+Alt+End { move-column-to-last; }
+    Mod+Shift+Home { move-column-to-first; }
+    Mod+Shift+End { move-column-to-last; }
 
-    Mod+Alt+Down { move-column-to-workspace-down; }
-    Mod+Alt+Up { move-column-to-workspace-up; }
+    Mod+Shift+Up { move-column-to-workspace-up; }
+    Mod+Shift+Down { move-column-to-workspace-down; }
 
-    Mod+Alt+1 { move-column-to-workspace 1; }
-    Mod+Alt+2 { move-column-to-workspace 2; }
-    Mod+Alt+3 { move-column-to-workspace 3; }
-    Mod+Alt+4 { move-column-to-workspace 4; }
-    Mod+Alt+5 { move-column-to-workspace 5; }
-    Mod+Alt+6 { move-column-to-workspace 6; }
-    Mod+Alt+7 { move-column-to-workspace 7; }
-    Mod+Alt+8 { move-column-to-workspace 8; }
-    Mod+Alt+9 { move-column-to-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
 
-    Mod+Shift+Down { move-workspace-down; }
-    Mod+Shift+Up { move-workspace-up; }
+    // Move workspaces
 
-    // Resize
+    Mod+Alt+Up { move-workspace-up; }
+    Mod+Alt+Down { move-workspace-down; }
+
+    // Layout
+
+    Mod+Comma { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
 
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
@@ -67,8 +80,6 @@ binds {
     Mod+0 { set-column-width "50%"; }
     Mod+Minus { set-column-width "-10%"; }
     Mod+Equal { set-column-width "+10%"; }
-    Mod+Shift+Minus { set-window-height "-10%"; }
-    Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Take screenshots
 
@@ -76,14 +87,13 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-    // Audio keys
+    // Media keys
 
     XF86AudioRaiseVolume { spawn "vol-inc"; }
     XF86AudioLowerVolume { spawn "vol-dec"; }
     XF86AudioMute { spawn "vol-mute"; }
-    XF86AudioMicMute { spawn "mic-mute"; }
 
-    // Brightness keys
+    XF86AudioMicMute { spawn "mic-mute"; }
 
     XF86MonBrightnessUp { spawn "br-inc"; }
     XF86MonBrightnessDown { spawn "br-dec"; }
@@ -141,15 +151,19 @@ layout {
     gaps 8
     center-focused-column "never"
     default-column-width { proportion 0.5; }
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
-    }
-    focus-ring {
-        width 2
+    default-column-display "tabbed"
+
+    tab-indicator {
+        gap 0
+        width 4
+        length total-proportion=1.0
+        position "top"
+        place-within-column
         active-color "#7fc8ff"
-        inactive-color "#505050"
+    }
+
+    focus-ring {
+        off
     }
 }
 
