@@ -42,6 +42,11 @@ binds {
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
 
+    // Focus monitors
+
+    Mod+BracketLeft { focus-monitor-left; }
+    Mod+BracketRight { focus-monitor-right; }
+
     // Move columns
 
     Mod+Shift+Left { move-column-left-or-to-monitor-left; }
@@ -62,6 +67,9 @@ binds {
     Mod+Shift+7 { move-column-to-workspace 7; }
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
+
+    Mod+Shift+BracketLeft { move-column-to-monitor-left; }
+    Mod+Shift+BracketRight { move-column-to-monitor-right; }
 
     // Move workspaces
 
@@ -97,6 +105,27 @@ binds {
 
     XF86MonBrightnessUp { spawn "br-inc"; }
     XF86MonBrightnessDown { spawn "br-dec"; }
+}
+
+//------------------------------------------------------------------------------
+// MONITORS
+
+// I used `niri msg outputs` to work out the details.
+
+// Left: laptop screen, 1920x1080
+output "eDP-1" {
+    scale 1
+    position x=0 y=0
+    background-color "black"
+}
+
+// Right: Asus ROG XG279
+output "HDMI-A-1" {
+    mode "2560x1440@144.006"
+    variable-refresh-rate
+    scale 1
+    position x=1920 y=0
+    background-color "black"
 }
 
 //------------------------------------------------------------------------------
@@ -139,12 +168,6 @@ input {
         // It's *fucking maddening*.
         dwt
     }
-}
-
-output "eDP-1" {
-    scale 1
-    transform "normal"
-    position x=1280 y=0
 }
 
 layout {
