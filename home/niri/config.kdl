@@ -134,7 +134,7 @@ output "eDP-1" {
 }
 
 layout {
-    gaps 12
+    gaps 8
     center-focused-column "never"
     default-column-width { proportion 0.5; }
     preset-column-widths {
