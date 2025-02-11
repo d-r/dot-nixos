@@ -8,13 +8,11 @@ default:
 [group('System')]
 in:
     sudo nixos-rebuild --flake . switch
-    source $nu.config-path
 
 # Build and test the new system
 [group('System')]
 test:
     sudo nixos-rebuild --flake . test
-    source $nu.config-path
 
 # Build the new system without activating it
 [group('System')]
