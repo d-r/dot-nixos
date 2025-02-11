@@ -5,7 +5,6 @@ alias d = dijo
 alias e = ^($env.EDITOR)
 alias j = just
 alias t = task
-alias topen = taskopen
 alias yt = yt-dlp
 
 alias gs = git st
