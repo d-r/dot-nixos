@@ -150,6 +150,7 @@
       kitty
       alacritty
       firefox-wayland
+      brave
       qutebrowser
       vscode.fhs
       emacs
