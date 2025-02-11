@@ -115,6 +115,10 @@ input {
         }
     }
 
+    mouse {
+        natural-scroll
+    }
+
     touchpad {
         tap
         natural-scroll
