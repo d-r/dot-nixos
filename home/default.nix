@@ -5,12 +5,6 @@
 }: let
   dan = "/home/dan";
   dots = config.lib.file.mkOutOfStoreSymlink "${dan}/dot/home";
-  defaultFont = {
-    name = "JetBrains Mono";
-    # A size of 10pt should equate to 13px, which is the size that JetBrains
-    # recommends for the font.
-    size = 10;
-  };
 in {
   home.stateVersion = "24.05";
   home.username = "dan";
@@ -149,7 +143,10 @@ in {
   programs.kitty = {
     enable = true;
     themeFile = "VSCode_Dark";
-    font = defaultFont;
+    font = {
+      name = "JetBrains Mono";
+      size = 10; # Points, not pixels
+    };
     settings = {
       shell = "${pkgs.nushell}/bin/nu";
       confirm_os_window_close = "0";
