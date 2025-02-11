@@ -36,24 +36,24 @@ binds {
 
     // Move
 
-    Mod+Ctrl+Left { move-column-left; }
-    Mod+Ctrl+Right { move-column-right; }
+    Mod+Alt+Left { move-column-left; }
+    Mod+Alt+Right { move-column-right; }
 
-    Mod+Ctrl+Home { move-column-to-first; }
-    Mod+Ctrl+End { move-column-to-last; }
+    Mod+Alt+Home { move-column-to-first; }
+    Mod+Alt+End { move-column-to-last; }
 
-    Mod+Ctrl+Down { move-column-to-workspace-down; }
-    Mod+Ctrl+Up { move-column-to-workspace-up; }
+    Mod+Alt+Down { move-column-to-workspace-down; }
+    Mod+Alt+Up { move-column-to-workspace-up; }
 
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Alt+1 { move-column-to-workspace 1; }
+    Mod+Alt+2 { move-column-to-workspace 2; }
+    Mod+Alt+3 { move-column-to-workspace 3; }
+    Mod+Alt+4 { move-column-to-workspace 4; }
+    Mod+Alt+5 { move-column-to-workspace 5; }
+    Mod+Alt+6 { move-column-to-workspace 6; }
+    Mod+Alt+7 { move-column-to-workspace 7; }
+    Mod+Alt+8 { move-column-to-workspace 8; }
+    Mod+Alt+9 { move-column-to-workspace 9; }
 
     Mod+Shift+Down { move-workspace-down; }
     Mod+Shift+Up { move-workspace-up; }
