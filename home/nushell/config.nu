@@ -1,7 +1,6 @@
 $env.config.show_banner = false
 
 alias c = clear
-alias d = dijo
 alias e = ^($env.EDITOR)
 alias j = just
 alias t = task

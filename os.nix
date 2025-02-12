@@ -131,7 +131,6 @@
       rsync
       unar
       yt-dlp
-      dijo
       taskwarrior3
       taskwarrior-tui
       neofetch
