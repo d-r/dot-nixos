@@ -78,8 +78,6 @@ binds {
 
     // Layout
 
-    Mod+R { switch-preset-column-width; }
-
     Mod+Comma { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
 
@@ -87,9 +85,10 @@ binds {
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
 
-    Mod+0 { set-column-width "50%"; }
-    Mod+Minus { set-column-width "-10%"; }
-    Mod+Equal { set-column-width "+10%"; }
+    Mod+R { switch-preset-window-width; }
+    Mod+0 { set-window-width "50%"; }
+    Mod+Minus { set-window-width "-10%"; }
+    Mod+Equal { set-window-width "+10%"; }
 
     // Take screenshot
 
@@ -147,8 +146,6 @@ input {
     // Switching to the same workspace by index twice brings you back to the
     // previous workspace.
     workspace-auto-back-and-forth
-
-    focus-follows-mouse
 
     keyboard {
         xkb {
