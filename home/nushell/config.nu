@@ -7,6 +7,7 @@ alias j = just
 alias t = task
 alias yt = yt-dlp
 
+alias g = git;
 alias gs = git st
 alias gd = git diff
 alias gc = git clone
