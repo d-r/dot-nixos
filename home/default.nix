@@ -49,16 +49,6 @@ in {
     enableNushellIntegration = true;
   };
 
-  programs.eza = {
-    enable = true;
-    enableZshIntegration = true;
-    enableNushellIntegration = true;
-    extraOptions = [
-      "--group-directories-first"
-      "--long"
-    ];
-  };
-
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;

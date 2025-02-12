@@ -118,6 +118,7 @@
 
       nushell
       zoxide
+      eza
       fd
       ripgrep
       yazi
