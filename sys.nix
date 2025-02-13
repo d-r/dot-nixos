@@ -178,6 +178,8 @@
     roboto-slab
     roboto-mono
     cantarell-fonts
+    terminus_font_ttf
+    terminus_font
   ];
 
   programs.nh = {
