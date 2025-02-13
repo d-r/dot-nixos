@@ -210,4 +210,5 @@ spawn-at-startup "xwayland-satellite"
 
 spawn-at-startup "swaybg" "--image" "/home/dan/dot/wallpapers/alena-aenami-all-i-need-1080p.jpg"
 spawn-at-startup "waybar"
+spawn-at-startup "clipse" "-listen"
 spawn-at-startup "code"

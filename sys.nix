@@ -115,18 +115,24 @@
     taskwarrior-tui
     neofetch
 
-    # GUI
+    # WM
 
-    xwayland-satellite
     xdg-utils
-    networkmanagerapplet
-    brightnessctl
-    pavucontrol
-    wev
+    xwayland-satellite
+    wl-clipboard
+    clipse
     waybar
     mako
     libnotify
     swaybg
+    pavucontrol
+    brightnessctl
+    networkmanagerapplet
+    rofi-wayland
+    wev
+
+    # GUI
+
     kitty
     alacritty
     firefox-wayland
@@ -134,7 +140,6 @@
     qutebrowser
     vscode.fhs
     emacs
-    rofi-wayland
     tauon
     nautilus
 
