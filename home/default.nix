@@ -11,6 +11,7 @@
     oss = "os switch";
 
     ni = "niri msg";
+    hc = "hyprctl";
 
     c = "clear";
     l = "eza --group-directories-first --long";
