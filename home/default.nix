@@ -57,6 +57,12 @@ in {
     enableZshIntegration = true;
   };
 
+  programs.carapace = {
+    enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+  };
+
   programs.tealdeer = {
     enable = true;
     settings = {
