@@ -179,6 +179,12 @@
     cantarell-fonts
   ];
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    flake = "/home/dan/dot";
+  };
+
   programs.niri = {
     enable = true;
     package = pkgs.niri-unstable;
