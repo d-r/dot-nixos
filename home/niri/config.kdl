@@ -5,7 +5,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Delete { quit skip-confirmation=true; }
 
-    Mod+W { close-window; }
+    Mod+Backspace { close-window; }
 
     // Run programs
 
