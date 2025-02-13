@@ -34,14 +34,6 @@
     color: #c9545d;
 }
 
-#battery,
-#clock,
-#network,
-#pulseaudio,
-#language {
-    padding-left: 20px;
-}
-
 #pulseaudio.muted {
     color: red;
 }
@@ -49,7 +41,6 @@
 #battery.warning {
     color: yellow;
 }
-
 #battery.critical {
     color: red;
 }
