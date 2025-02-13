@@ -144,9 +144,12 @@ in {
     };
     settings = {
       shell = "${pkgs.nushell}/bin/nu";
+
       confirm_os_window_close = "0";
       enable_audio_bell = false;
       allow_remote_control = "socket-only";
+      copy_on_select = true;
+
       disable_ligatures = "always";
       window_padding_width = "8";
       tab_bar_edge = "top";
