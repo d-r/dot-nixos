@@ -93,6 +93,18 @@
 
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
+  # Supposed to enable some kind of build cache for Hyprland, when using the
+  # flake version. No idea if it actually works or not. Doesn't seem to.
+  # https://wiki.hyprland.org/Nix/Cachix/
+  nix.settings = {
+    substituters = [
+      "https://hyprland.cachix.org"
+    ];
+    trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
     # CLI
 
