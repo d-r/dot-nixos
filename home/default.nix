@@ -24,6 +24,7 @@ in {
   };
 
   xdg.configFile = {
+    "nushell/dan.nu".source = "${dots}/nushell/config.nu";
     "emacs/early-init.el".source = "${dots}/emacs/early-init.el";
     "emacs/init.el".source = "${dots}/emacs/init.el";
     "waybar".source = "${dots}/waybar";
@@ -43,7 +44,7 @@ in {
 
   programs.nushell = {
     enable = true;
-    configFile.source = ./nushell/config.nu;
+    configFile.text = "source dan.nu";
   };
 
   programs.zoxide = {
