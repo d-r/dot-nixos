@@ -6,6 +6,24 @@
 }: let
   dan = "/home/dan";
   dots = config.lib.file.mkOutOfStoreSymlink "${dan}/dot/home";
+  shellAliases = {
+    os = "nh os";
+    oss = "os switch";
+
+    ni = "niri msg";
+
+    c = "clear";
+    l = "eza --group-directories-first --long";
+    e = "micro";
+    j = "just";
+    t = "task";
+    yt = "yt-dlp";
+
+    g = "git";
+    gs = "git st";
+    gd = "git diff";
+    gc = "git clone";
+  };
 in {
   home.stateVersion = "24.05";
   home.username = "dan";
@@ -37,6 +55,8 @@ in {
     "$HOME/dot/bin"
   ];
 
+  home.shellAliases = shellAliases;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -46,6 +66,7 @@ in {
 
   programs.nushell = {
     enable = true;
+    shellAliases = shellAliases;
     configFile.text = "source dan.nu";
   };
 
