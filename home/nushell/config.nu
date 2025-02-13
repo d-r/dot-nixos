@@ -1,6 +1,7 @@
 $env.config.show_banner = false
 
 alias os = nh os
+alias oss = os switch
 
 alias c = clear
 alias e = ^($env.EDITOR)
