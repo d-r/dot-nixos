@@ -63,6 +63,9 @@ in {
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    localVariables = {
+      PROMPT = "%F{blue}%~> ";
+    };
   };
 
   programs.nushell = {
