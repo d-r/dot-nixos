@@ -30,6 +30,10 @@ in {
     "niri".source = "${dots}/niri";
   };
 
+  home.sessionPath = [
+    "$HOME/dot/bin"
+  ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;

@@ -1,0 +1,26 @@
+#!/usr/bin/env nu
+
+# Get volume
+def main [] {
+    wpctl get-volume @DEFAULT_AUDIO_SINK@
+}
+
+# Decrease volume by 5%
+def "main dec" [] {
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+}
+
+# Increase volume by 5%
+def "main inc" [] {
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+}
+
+# Mute/unmute sound
+def "main toggle" [] {
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+}
+
+# Mute/unmute microphone
+def "main toggle-mic" [] {
+    wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+}

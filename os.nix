@@ -106,11 +106,6 @@
     with pkgs; [
       # SCRIPTS
 
-      (script "vol-inc" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'')
-      (script "vol-dec" ''wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-'')
-      (script "vol-mute" ''wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'')
-      (script "mic-mute" ''pactl set-source-mute @DEFAULT_SOURCE@ toggle'')
-
       (script "br-inc" ''brightnessctl set 10%+'')
       (script "br-dec" ''brightnessctl set 10%-'')
 
