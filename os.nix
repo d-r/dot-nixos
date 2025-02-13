@@ -100,69 +100,61 @@
 
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
-  environment.systemPackages = let
-    script = pkgs.writeShellScriptBin;
-  in
-    with pkgs; [
-      # SCRIPTS
+  environment.systemPackages = with pkgs; [
+    # CLI
 
-      (script "br-inc" ''brightnessctl set 10%+'')
-      (script "br-dec" ''brightnessctl set 10%-'')
+    nushell
+    zoxide
+    eza
+    fd
+    ripgrep
+    yazi
+    micro
+    neovim
+    bat
+    tealdeer
+    wget
+    curl
+    rsync
+    unar
+    yt-dlp
+    taskwarrior3
+    taskwarrior-tui
+    neofetch
 
-      # CLI
+    # GUI
 
-      nushell
-      zoxide
-      eza
-      fd
-      ripgrep
-      yazi
-      micro
-      neovim
-      bat
-      tealdeer
-      wget
-      curl
-      rsync
-      unar
-      yt-dlp
-      taskwarrior3
-      taskwarrior-tui
-      neofetch
+    xwayland-satellite
+    xdg-utils
+    networkmanagerapplet
+    brightnessctl
+    pavucontrol
+    wev
+    waybar
+    mako
+    libnotify
+    swaybg
+    kitty
+    alacritty
+    firefox-wayland
+    brave
+    qutebrowser
+    vscode.fhs
+    emacs
+    rofi-wayland
+    tauon
+    nautilus
 
-      # GUI
+    # DEV
 
-      xwayland-satellite
-      xdg-utils
-      networkmanagerapplet
-      brightnessctl
-      pavucontrol
-      wev
-      waybar
-      mako
-      libnotify
-      swaybg
-      kitty
-      alacritty
-      firefox-wayland
-      brave
-      qutebrowser
-      vscode.fhs
-      emacs
-      rofi-wayland
-      tauon
-      nautilus
-
-      # DEV
-
-      git
-      just
-      nixd
-      alejandra
-      rustup
-      jetbrains.rust-rover
-      jetbrains.clion
-    ];
+    git
+    just
+    nixd
+    alejandra
+    rustup
+    jetbrains.rust-rover
+    jetbrains.clion
+  ];
 
   fonts.packages = with pkgs; [
     jetbrains-mono

@@ -1,0 +1,16 @@
+#!/usr/bin/env nu
+
+# Get brightness
+def main [] {
+    brightnessctl get
+}
+
+# Decrease brightness by 10%
+def "main dec" [] {
+    brightnessctl set 10%-
+}
+
+# Increase brightness by 10%
+def "main inc" [] {
+    brightnessctl set 10%+
+}
