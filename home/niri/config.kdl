@@ -103,8 +103,8 @@ binds {
     XF86AudioMute { spawn "vol" "toggle"; }
     XF86AudioMicMute { spawn "vol" "toggle-mic"; }
 
-    XF86MonBrightnessDown { spawn "br" "dec"; }
-    XF86MonBrightnessUp { spawn "br" "inc"; }
+    XF86MonBrightnessDown { spawn "bri" "dec"; }
+    XF86MonBrightnessUp { spawn "bri" "inc"; }
 }
 
 //------------------------------------------------------------------------------
