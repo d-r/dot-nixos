@@ -49,8 +49,8 @@ binds {
 
     // Move column
 
-    Mod+Shift+Left { move-column-left-or-to-monitor-left; }
-    Mod+Shift+Right { move-column-right-or-to-monitor-right; }
+    Mod+Shift+Left { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
 
     Mod+Shift+Home { move-column-to-first; }
     Mod+Shift+End { move-column-to-last; }
