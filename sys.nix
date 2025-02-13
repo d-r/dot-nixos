@@ -4,13 +4,6 @@
   lib,
   ...
 }: {
-  #-----------------------------------------------------------------------------
-  # NIX
-
-  # Got this from https://www.youtube.com/watch?v=M_zMoHlbZBY
-  # TODO: Document why this is needed.
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-
   nix.settings.experimental-features = "nix-command flakes";
 
   #-----------------------------------------------------------------------------
