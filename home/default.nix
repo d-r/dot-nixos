@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: let
   dan = "/home/dan";
@@ -29,6 +30,7 @@ in {
     "emacs/init.el".source = "${dots}/emacs/init.el";
     "waybar".source = "${dots}/waybar";
     "niri".source = "${dots}/niri";
+    "hypr/dan.conf".source = "${dots}/hypr/hyprland.conf";
   };
 
   home.sessionPath = [
@@ -177,5 +179,16 @@ in {
     enable = true;
     # 5 seconds in milliseconds.
     defaultTimeout = 5000;
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    package = null; # Use the packages from the NixOS module.
+    portalPackage = null;
+    plugins = [
+      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+      inputs.hy3.packages.${pkgs.system}.hy3
+    ];
+    extraConfig = "source = dan.conf";
   };
 }

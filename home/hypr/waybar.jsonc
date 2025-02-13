@@ -1,0 +1,55 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 20,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "backlight",
+        "pulseaudio",
+        "battery",
+        "network",
+        "clock"
+    ],
+
+    "hyprland/window": {
+        "separate-outputs": true
+    },
+    "pulseaudio": {
+        "format": "{volume}% <span foreground=\"#777\">VO</span>",
+        "format-muted": "<s>{volume}%</s> <span foreground=\"#777\">VO</span>",
+        "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "format": "{percent}% <span foreground=\"#777\">BR</span>",
+        "tooltip": false
+    },
+    "battery": {
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% <span foreground=\"#777\">BA</span>",
+        "format-charging": "{capacity}% <span foreground=\"white\">AC</span>",
+        "tooltip": false
+    },
+    "network": {
+        "interval": 5,
+        "format": "{signalStrength}% <span foreground=\"#777\">WI</span>",
+        "format-disconnected": "OFFLINE",
+        "tooltip-format": "{essid}\n{ipaddr}\n{ifname}"
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%a %b %d %H:%M} ",
+        "tooltip-format": "Week {:%W}",
+        "tooltip": true
+    }
+}

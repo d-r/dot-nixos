@@ -15,6 +15,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.dan = import ./home;
+          home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];
       specialArgs = {inherit inputs;};
