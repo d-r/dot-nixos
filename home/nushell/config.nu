@@ -3,6 +3,8 @@ $env.config.show_banner = false
 alias os = nh os
 alias oss = os switch
 
+alias ni = niri msg
+
 alias c = clear
 alias l = eza --group-directories-first --long
 alias e = ^($env.EDITOR)
