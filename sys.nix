@@ -150,6 +150,9 @@
     nixd
     alejandra
     rustup
+    lua
+    luajit
+    fennel
     jetbrains.rust-rover
     jetbrains.clion
   ];
