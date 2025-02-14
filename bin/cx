@@ -1,0 +1,52 @@
+#!/usr/bin/env nu
+
+alias hc = hyprctl
+alias dis = hc dispatch
+
+#-------------------------------------------------------------------------------
+# COMMANDS
+
+const WS_COUNT = 5
+
+def main [] {}
+
+def "main up" [] {
+    let ws = get_workspace
+    let n = $ws.id | into int
+    let min =  ($ws.monitorID | into int) * $WS_COUNT + 1
+    if $n > $min {
+        dis workspace "-1"
+    }
+}
+
+def "main down" [] {
+    let ws = get_workspace
+    let n = $ws.id | into int
+    let max =  (($ws.monitorID | into int) + 1) * $WS_COUNT
+    if $n < $max {
+        dis workspace "+1"
+    }
+}
+
+# `n` is a 1-based index
+# TODO: check that n is within 1..$WS_COUNT
+def "main ws" [n: int] {
+    let ws = get_workspace
+    let start = ($ws.monitorID | into int) * $WS_COUNT
+    let id = $start + $n
+    dis workspace $id
+}
+
+def "main move-to-ws" [n: int] {
+    let ws = get_workspace
+    let start = ($ws.monitorID | into int) * $WS_COUNT
+    let id = $start + $n
+    dis movetoworkspace $id
+}
+
+#-------------------------------------------------------------------------------
+# PRIVATE
+
+def get_workspace [] {
+    hc activeworkspace -j | from json
+}

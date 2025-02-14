@@ -211,7 +211,6 @@ in {
     package = null; # Use the packages from the NixOS module.
     portalPackage = null;
     plugins = [
-      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
       inputs.hy3.packages.${pkgs.system}.hy3
     ];
     extraConfig = "source = dan.conf";
