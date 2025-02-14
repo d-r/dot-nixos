@@ -14,7 +14,6 @@
     hc = "hyprctl";
 
     c = "clear";
-    l = "eza --group-directories-first --long";
     e = "micro";
     j = "just";
     t = "task";
