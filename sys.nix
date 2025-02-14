@@ -147,7 +147,7 @@
     # GUI
 
     kitty
-    alacritty
+    wezterm
     firefox-wayland
     brave
     qutebrowser
