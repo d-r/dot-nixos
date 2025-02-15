@@ -142,9 +142,9 @@ environment {
 }
 
 input {
-    // Switching to the same workspace by index twice brings you back to the
-    // previous workspace.
     workspace-auto-back-and-forth
+    focus-follows-mouse
+    warp-mouse-to-focus
 
     keyboard {
         xkb {
@@ -157,14 +157,14 @@ input {
     }
 
     touchpad {
-        tap
         natural-scroll
+        tap
+        dwt // Disable while typing
 
-        // Disable while typing.
-        // Without this, I keep accidentally tapping the touchpad with my palms
-        // as I type, causing the cursor to jump elsewhere in the text.
-        // It's *fucking maddening*.
-        dwt
+        // TODO: Figure out which method, and which other settings provide the
+        // best experience. Still find the trackpad on this laptop annoying as
+        // fuck to use. Keep accidentally triggering clicks constantly.
+        click-method "clickfinger"
     }
 }
 
