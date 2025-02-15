@@ -43,6 +43,7 @@ in {
   };
 
   xdg.configFile = {
+    "wezterm".source = "${dots}/wezterm";
     "nushell/dan.nu".source = "${dots}/nushell/config.nu";
     "emacs/early-init.el".source = "${dots}/emacs/early-init.el";
     "emacs/init.el".source = "${dots}/emacs/init.el";
