@@ -129,7 +129,6 @@
     # WM
 
     xdg-utils
-    xwayland
     xwayland-satellite
     wl-clipboard
     clipse
@@ -187,21 +186,21 @@
     flake = "/home/dan/dot";
   };
 
-  # Disabled because it conflicts with Hyprland.
-  # TODO: Figure out how to have them both co-exist. If I can be bothered.
   programs.niri = {
-    enable = false;
+    enable = true;
     package = pkgs.niri-unstable;
   };
 
-  # This needs to be enabled here, even when you're also enabling Hyprland in
-  # the Home Manager config.
   programs.hyprland = {
     enable = true;
-    # Use the flake packages.
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
+
+  # Hyprland enables xwayland. niri disables it.
+  # Enabling it here, or I get an error about conflicting values.
+  # Hoping this doesn't cause any weirdness when running niri.
+  programs.xwayland.enable = true;
 
   programs.dconf.enable = true;
 }
