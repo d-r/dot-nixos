@@ -193,6 +193,14 @@ in {
     };
   };
 
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    settings = {
+      link-url = true;
+    };
+  };
+
   # TODO: Tweak appearance.
   # https://nix-community.github.io/home-manager/options.xhtml#opt-services.mako.enable
   services.mako = {
