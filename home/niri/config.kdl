@@ -10,7 +10,7 @@ binds {
     // Run programs
 
     Mod+P { spawn "rofi" "-show-icons" "-show" "drun"; }
-    Mod+T { spawn "kitty"; }
+    Mod+Return { spawn "kitty"; }
     Mod+E { spawn "code"; }
     Mod+B { spawn "firefox"; }
 
