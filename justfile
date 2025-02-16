@@ -5,22 +5,22 @@ default:
 # Build and install (activate) the new system
 [group('System')]
 in:
-    sudo nixos-rebuild --flake . switch
+    nh os switch
 
 # Build and test the new system
 [group('System')]
 test:
-    sudo nixos-rebuild --flake . test
+    nh os test
 
 # Build the new system without activating it
 [group('System')]
 build:
-    sudo nixos-rebuild --flake . build
+    nh os build
 
 # Collect garbage (delete old revisions)
 [group('System')]
 gc:
-    sudo nix-collect-garbage -d
+    nh os clean all
 
 # Update flake inputs
 [group('Flake')]
