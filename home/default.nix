@@ -203,12 +203,13 @@ in {
     };
   };
 
-  # TODO: Tweak appearance.
-  # https://nix-community.github.io/home-manager/options.xhtml#opt-services.mako.enable
   services.mako = {
     enable = true;
-    # 5 seconds in milliseconds.
-    defaultTimeout = 5000;
+    defaultTimeout = 5000; # 5 seconds in milliseconds.
+    backgroundColor = "#000000ff";
+    borderColor = "#595959aa";
+    width = 600;
+    height = 9000; # No height limit. Default is 100.
   };
 
   wayland.windowManager.hyprland = {
