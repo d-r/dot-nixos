@@ -22,6 +22,7 @@
     g = "git";
     gs = "git st";
     gd = "git diff";
+    gl = "git log";
     gc = "git clone";
   };
 in {
