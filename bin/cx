@@ -44,6 +44,12 @@ def "main move-to-ws" [n: int] {
     dis movetoworkspace $id
 }
 
+def "main info" [] {
+    # Send notifications with no expiry time. They will appear in reverse order.
+    notify-send --expire-time=0 (hc activewindow | str trim)
+    notify-send --expire-time=0 (hc activeworkspace | str trim)
+}
+
 #-------------------------------------------------------------------------------
 # PRIVATE
 
