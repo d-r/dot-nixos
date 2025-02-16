@@ -1,5 +1,3 @@
-set shell := ["nu", "-c"]
-
 # List recipes
 default:
     @just --list --unsorted
