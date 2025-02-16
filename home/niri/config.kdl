@@ -1,6 +1,9 @@
 //------------------------------------------------------------------------------
 // KEYBINDINGS
 
+// To see all bindable actions:
+// niri msg action -h
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Delete { quit skip-confirmation=true; }
@@ -14,52 +17,42 @@ binds {
     Mod+E { spawn "code"; }
     Mod+B { spawn "firefox"; }
 
-    // Focus column
+    // Focus
 
     Mod+Left { focus-column-or-monitor-left; }
     Mod+Right { focus-column-or-monitor-right; }
+    Mod+Up { focus-workspace-up; }
+    Mod+Down { focus-workspace-down; }
 
     Mod+Home { focus-column-first; }
     Mod+End { focus-column-last; }
 
-    // Focus window
-
     Mod+Grave { focus-window-down-or-top; }
     Mod+Tab { focus-window-previous; }
-
-    // Focus workspace
-
-    Mod+Up { focus-workspace-up; }
-    Mod+Down { focus-workspace-down; }
-
-    // Focus monitor
 
     Mod+BracketLeft { focus-monitor-left; }
     Mod+BracketRight { focus-monitor-right; }
 
-    // Move column
+    // Move
 
     Mod+Shift+Left { move-column-left; }
     Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up { move-column-to-workspace-up; }
+    Mod+Shift+Down { move-column-to-workspace-down; }
 
     Mod+Shift+Home { move-column-to-first; }
     Mod+Shift+End { move-column-to-last; }
 
-    Mod+Shift+Up { move-column-to-workspace-up; }
-    Mod+Shift+Down { move-column-to-workspace-down; }
-
-    Mod+Shift+BracketLeft { move-column-to-monitor-left; }
-    Mod+Shift+BracketRight { move-column-to-monitor-right; }
-
-    // Move workspace
+    Mod+Comma { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
 
     Mod+Alt+Up { move-workspace-up; }
     Mod+Alt+Down { move-workspace-down; }
 
-    // Layout
+    Mod+Shift+BracketLeft { move-column-to-monitor-left; }
+    Mod+Shift+BracketRight { move-column-to-monitor-right; }
 
-    Mod+Comma { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
+    // Layout
 
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
