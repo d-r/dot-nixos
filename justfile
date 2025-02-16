@@ -31,3 +31,8 @@ up:
 [group('Flake')]
 check:
     nix flake check
+
+# Enter a Nix REPL with the flake loaded
+[group('Flake')]
+repl:
+    nh os repl
