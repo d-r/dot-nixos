@@ -121,6 +121,7 @@
     curl
     rsync
     unar
+    unzip
     yt-dlp
     taskwarrior3
     taskwarrior-tui
@@ -157,11 +158,15 @@
     # DEV
 
     git
+    gcc
+    gnumake
+    cmake
     just
     nixd
     alejandra
     rustup
     lua
+    luarocks
     luajit
     fennel
     jetbrains.rust-rover
