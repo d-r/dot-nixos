@@ -1,14 +1,18 @@
 //------------------------------------------------------------------------------
 // KEYBINDINGS
 
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+
 // To see all bindable actions:
-// niri msg action -h
+// $ niri msg action -h
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Delete { quit skip-confirmation=true; }
 
     Mod+Backspace { close-window; }
+
+    Mod+F { maximize-column; }
 
     // Run programs
 
@@ -19,10 +23,10 @@ binds {
 
     // Focus
 
-    Mod+Left { focus-column-or-monitor-left; }
-    Mod+Right { focus-column-or-monitor-right; }
-    Mod+Up { focus-workspace-up; }
-    Mod+Down { focus-workspace-down; }
+    Mod+Left { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Up { focus-window-or-workspace-up; }
+    Mod+Down { focus-window-or-workspace-down; }
 
     Mod+Home { focus-column-first; }
     Mod+End { focus-column-last; }
@@ -30,41 +34,44 @@ binds {
     Mod+Grave { focus-window-down-or-top; }
     Mod+Tab { focus-window-previous; }
 
-    Mod+BracketLeft { focus-monitor-left; }
-    Mod+BracketRight { focus-monitor-right; }
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
 
     // Move
+    // TODO: Decide which modifier(s) to use for moving stuff.
 
     Mod+Shift+Left { move-column-left; }
     Mod+Shift+Right { move-column-right; }
-    Mod+Shift+Up { move-column-to-workspace-up; }
-    Mod+Shift+Down { move-column-to-workspace-down; }
+    Mod+Shift+Up { move-window-up-or-to-workspace-up; }
+    Mod+Shift+Down { move-window-down-or-to-workspace-down; }
 
     Mod+Shift+Home { move-column-to-first; }
     Mod+Shift+End { move-column-to-last; }
 
-    Mod+Comma { consume-window-into-column; }
-    Mod+Period { expel-window-from-column; }
+    Mod+Comma { consume-or-expel-window-left; }
+    Mod+Period { consume-or-expel-window-right; }
 
     Mod+Alt+Up { move-workspace-up; }
     Mod+Alt+Down { move-workspace-down; }
 
+    // Monitors
+    // TODO: Come up with better bindings.
+
+    Mod+BracketLeft { focus-monitor-left; }
+    Mod+BracketRight { focus-monitor-right; }
+
     Mod+Shift+BracketLeft { move-column-to-monitor-left; }
     Mod+Shift+BracketRight { move-column-to-monitor-right; }
 
-    // Layout
-
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
-    Mod+C { center-column; }
-
-    Mod+R { switch-preset-window-width; }
-    Mod+0 { set-window-width "50%"; }
-    Mod+Minus { set-window-width "-10%"; }
-    Mod+Equal { set-window-width "+10%"; }
-
-    // Take screenshot
-
+    // Screenshot
+    // TODO: Figure out why the Print key isn't working on the external kb.
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
@@ -83,28 +90,27 @@ binds {
 //------------------------------------------------------------------------------
 // MONITORS
 
-// I used `niri msg outputs` to work out the details.
+// To get a list:
+// $ niri msg outputs
 
-// Left: laptop screen, 1920x1080
+// Left: laptop screen, 13", 1920x1080
 output "eDP-1" {
     scale 1
     position x=0 y=0
-    background-color "black"
 }
 
-// Right: Asus ROG XG279
+// Right: Asus ROG XG279, 27", 2560x1440, 170 Hz
 output "HDMI-A-1" {
     mode "2560x1440@144.006"
     variable-refresh-rate
     scale 1
     position x=1920 y=0
-    background-color "black"
 }
 
 //------------------------------------------------------------------------------
 // SETTINGS
 
-// Remove decorations from windows.
+// Remove window decorations.
 prefer-no-csd
 
 screenshot-path "~/images/screenshot-%Y-%m-%d-%H-%M-%S.png"
@@ -115,6 +121,7 @@ environment {
 }
 
 input {
+    // TODO: Decide how you feel about these three:
     workspace-auto-back-and-forth
     focus-follows-mouse
     warp-mouse-to-focus
@@ -131,19 +138,15 @@ input {
 
     touchpad {
         natural-scroll
-        tap
         dwt // Disable while typing
-
-        // TODO: Figure out which method, and which other settings provide the
-        // best experience. Still find the trackpad on this laptop annoying as
-        // fuck to use. Keep accidentally triggering clicks constantly.
         click-method "clickfinger"
     }
 }
 
 layout {
-    gaps 4
-    default-column-display "tabbed"
+    gaps 8
+    // default-column-display "tabbed"
+    default-column-display "normal"
 
     tab-indicator {
         hide-when-single-tab
@@ -168,6 +171,15 @@ layout {
         proportion 0.5
         proportion 0.66667
     }
+}
+
+cursor {
+    hide-when-typing
+}
+
+clipboard {
+    // Disable middle-click paste. Too easy to trigger accidentally.
+    disable-primary
 }
 
 //------------------------------------------------------------------------------
