@@ -1,0 +1,7 @@
+data.location=$XDG_DATA_HOME/task
+
+# 1-nov-24
+dateFormat=d-b-y
+
+# Don't nag me about news
+news.version=3.9.9

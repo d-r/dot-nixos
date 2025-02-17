@@ -48,6 +48,7 @@ in {
     "kitty".source = "${dots}/kitty";
     "ghostty".source = "${dots}/ghostty";
     "wezterm".source = "${dots}/wezterm";
+    "task".source = "${dots}/task";
     "nvim".source = "${dots}/nvim";
     "nushell/dan.nu".source = "${dots}/nushell/config.nu";
     "emacs/early-init.el".source = "${dots}/emacs/early-init.el";
@@ -101,18 +102,6 @@ in {
         auto_update = true;
         auto_update_interval_hours = 24;
       };
-    };
-  };
-
-  programs.taskwarrior = {
-    enable = true;
-    package = pkgs.taskwarrior3;
-    dataLocation = "$XDG_DATA_HOME/task";
-    config = {
-      # 1-nov-24"
-      dateFormat = "d-b-y";
-      # Don't nag me about news
-      news.version = "3.9.9";
     };
   };
 
