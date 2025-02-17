@@ -49,6 +49,7 @@ in {
     "ghostty".source = "${dots}/ghostty";
     "wezterm".source = "${dots}/wezterm";
     "task".source = "${dots}/task";
+    "tealdeer".source = "${dots}/tealdeer";
     "nvim".source = "${dots}/nvim";
     "nushell/dan.nu".source = "${dots}/nushell/config.nu";
     "emacs/early-init.el".source = "${dots}/emacs/early-init.el";
@@ -90,19 +91,6 @@ in {
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
-  };
-
-  programs.tealdeer = {
-    enable = true;
-    settings = {
-      display = {
-        use_pager = true;
-      };
-      updates = {
-        auto_update = true;
-        auto_update_interval_hours = 24;
-      };
-    };
   };
 
   services.mako = {
