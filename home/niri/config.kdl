@@ -1,4 +1,14 @@
 //------------------------------------------------------------------------------
+// RULES
+
+window-rule {
+    match app-id="clipse"
+
+    open-floating true
+    max-width 700
+}
+
+//------------------------------------------------------------------------------
 // KEYBINDINGS
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
@@ -20,6 +30,7 @@ binds {
     Mod+Return { spawn "kitty"; }
     Mod+E { spawn "code"; }
     Mod+B { spawn "firefox"; }
+    Mod+V { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
 
     // Focus
 
