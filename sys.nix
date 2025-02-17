@@ -93,8 +93,7 @@
 
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
-  # Supposed to enable some kind of build cache for Hyprland, when using the
-  # flake version. No idea if it actually works or not. Doesn't seem to.
+  # Enable some kind of build cache for the flake version Hyprland.
   # https://wiki.hyprland.org/Nix/Cachix/
   nix.settings = {
     substituters = [
