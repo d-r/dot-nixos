@@ -125,13 +125,6 @@
     # https://github.com/bugaevc/wl-clipboard
     wl-clipboard
 
-    # Normally, when you copy something on Wayland and then close the
-    # application you copied from, the copied data (e.g. text) disappears
-    # and you cannot paste it anymore. If you run wl-clip-persist in the
-    # background, however, the copied data persists.
-    # https://github.com/Linus789/wl-clip-persist
-    wl-clip-persist
-
     # TUI clipboard manager
     # https://github.com/savedra1/clipse
     clipse
