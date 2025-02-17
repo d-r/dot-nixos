@@ -107,6 +107,7 @@
   environment.systemPackages = with pkgs; [
     # BEING EVALUATED
 
+    zk
     fzf
     skim
     carapace
