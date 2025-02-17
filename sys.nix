@@ -105,17 +105,30 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # BEING EVALUATED
+
+    fzf
+    skim
+    carapace
+    clipse
+    mako
+    ghostty
+    wezterm
+    emacs
+    neovim
+    brave
+    qutebrowser
+    nautilus
+    tauon
+
     # CLI
 
     nushell
     zoxide
-    fzf
-    skim
     ripgrep
     fd
     yazi
     micro
-    neovim
     bat
     tealdeer
     wget
@@ -132,30 +145,21 @@
 
     xdg-utils
     xwayland-satellite
-    wl-clipboard
-    clipse
-    waybar
-    mako
     libnotify
     swaybg
     pavucontrol
     brightnessctl
     networkmanagerapplet
     rofi-wayland
+    wl-clipboard
+    waybar
     wev
 
     # GUI
 
     kitty
-    ghostty
-    wezterm
     firefox-wayland
-    brave
-    qutebrowser
     vscode.fhs
-    emacs
-    tauon
-    nautilus
 
     # DEV
 
