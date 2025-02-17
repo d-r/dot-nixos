@@ -109,8 +109,10 @@
 
     nushell
     zoxide
-    fd
+    fzf
+    skim
     ripgrep
+    fd
     yazi
     micro
     neovim
