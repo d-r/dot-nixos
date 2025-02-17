@@ -200,6 +200,7 @@ in {
     enableZshIntegration = true;
     settings = {
       link-url = true;
+      font-feature = "-calt"; # Disable ligatures
     };
   };
 
