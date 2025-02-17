@@ -1,0 +1,45 @@
+[user]
+    email = "9402+d-r@users.noreply.github.com"
+    name = "Daniel Rosengren"
+
+[init]
+    defaultBranch = "main"
+
+[push]
+    # Removes the need to do "git push --set-upstream origin <branch>" for
+    # a branch that does not yet exist upstream.
+    autoSetupRemote = true
+
+[alias]
+    st = "status --short"
+    lg = "log --oneline --decorate"
+    lf = "log --name-status"
+    last = "log -1 HEAD --stat"
+
+    co = "checkout"
+    ca = "commit -a --amend --no-edit"
+    nm = "!git reset --hard HEAD && git clean -d -f"
+    pf = "push --force"
+
+    nb = "new-branch"
+    mv = "move-branch"
+    rb = "rename-branch"
+    db = "delete-branch"
+    drb = "delete-remote-branch"
+
+    amend = "commit --amend"
+    unstage = "reset head --"
+    untrack = "rm -r --cached"
+    discard = "checkout --"
+    undo = "reset --hard HEAD~"
+
+    new-branch = "checkout -b"
+    move-branch = "branch -f"
+    rename-branch = "branch -m"
+    delete-branch = "branch -D"
+    delete-remote-branch = "push origin --delete"
+
+    branches = "branch -a -v"
+    remotes = "remote -v"
+    stashes = "stash list"
+    tags = "tag list"
