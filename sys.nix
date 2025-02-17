@@ -145,6 +145,7 @@
     # GUI
 
     kitty
+    ghostty
     wezterm
     firefox-wayland
     brave

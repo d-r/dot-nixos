@@ -46,6 +46,7 @@ in {
   xdg.configFile = {
     "git".source = "${dots}/git";
     "kitty".source = "${dots}/kitty";
+    "ghostty".source = "${dots}/ghostty";
     "wezterm".source = "${dots}/wezterm";
     "nvim".source = "${dots}/nvim";
     "nushell/dan.nu".source = "${dots}/nushell/config.nu";
@@ -112,17 +113,6 @@ in {
       dateFormat = "d-b-y";
       # Don't nag me about news
       news.version = "3.9.9";
-    };
-  };
-
-  programs.ghostty = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      link-url = true;
-      font-feature = "-calt"; # Disable ligatures
-      window-padding-x = 8;
-      window-padding-y = 8;
     };
   };
 
