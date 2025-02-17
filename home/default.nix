@@ -45,6 +45,7 @@ in {
 
   xdg.configFile = {
     "git".source = "${dots}/git";
+    "kitty".source = "${dots}/kitty";
     "wezterm".source = "${dots}/wezterm";
     "nvim".source = "${dots}/nvim";
     "nushell/dan.nu".source = "${dots}/nushell/config.nu";
@@ -111,36 +112,6 @@ in {
       dateFormat = "d-b-y";
       # Don't nag me about news
       news.version = "3.9.9";
-    };
-  };
-
-  programs.kitty = {
-    enable = true;
-    themeFile = "VSCode_Dark";
-    font = {
-      name = "JetBrains Mono";
-      size = 10; # Points, not pixels
-    };
-    settings = {
-      shell = "${pkgs.nushell}/bin/nu";
-
-      confirm_os_window_close = "0";
-      enable_audio_bell = false;
-      allow_remote_control = "socket-only";
-      copy_on_select = true;
-
-      disable_ligatures = "always";
-      window_padding_width = "8";
-      tab_bar_edge = "top";
-      active_tab_font_style = "normal"; # Default is "italic"
-    };
-    keybindings = {
-      "ctrl+t" = "new_tab";
-      "ctrl+w" = "close_tab";
-      "ctrl+page_up" = "previous_tab";
-      "ctrl+page_down" = "next_tab";
-      "ctrl+shift+page_up" = "move_tab_backward";
-      "ctrl+shift+page_down" = "move_tab_forward";
     };
   };
 
