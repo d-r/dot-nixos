@@ -201,6 +201,8 @@ in {
     settings = {
       link-url = true;
       font-feature = "-calt"; # Disable ligatures
+      window-padding-x = 8;
+      window-padding-y = 8;
     };
   };
 
