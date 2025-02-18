@@ -91,6 +91,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    # Needed for Logseq
+    "electron-27.3.11"
+  ];
+
   nixpkgs.overlays = [inputs.niri.overlays.niri];
 
   # Enable some kind of build cache for the flake version Hyprland.
@@ -165,6 +170,7 @@
     kitty
     firefox-wayland
     vscode.fhs
+    logseq
 
     # DEV
 
