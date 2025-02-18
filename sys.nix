@@ -112,8 +112,6 @@
     skim
     carapace
     mako
-    ghostty
-    wezterm
     emacs
     neovim
     brave

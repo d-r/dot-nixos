@@ -46,8 +46,6 @@ in {
   xdg.configFile = {
     "git".source = "${dots}/git";
     "kitty".source = "${dots}/kitty";
-    "ghostty".source = "${dots}/ghostty";
-    "wezterm".source = "${dots}/wezterm";
     "task".source = "${dots}/task";
     "tealdeer".source = "${dots}/tealdeer";
     "nvim".source = "${dots}/nvim";
