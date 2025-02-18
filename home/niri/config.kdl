@@ -81,11 +81,14 @@ binds {
     Mod+Shift+BracketLeft { move-column-to-monitor-left; }
     Mod+Shift+BracketRight { move-column-to-monitor-right; }
 
-    // Screenshot
-    // TODO: Figure out why the Print key isn't working on the external kb.
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    // Screenshotting
+    // These are similar to the binds on macOS, as I'm used to `em.
+    // TODO: Come up with better ones.
+    // TODO: Figure out why the PrintScr key isn't working on the external kb.
+
+    Mod+Shift+4 { screenshot; }
+    Mod+Shift+3 { screenshot-screen; }
+    Mod+Shift+2 { screenshot-window; }
 
     // Media keys
 
