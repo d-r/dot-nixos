@@ -142,10 +142,8 @@ environment {
 }
 
 input {
-    // TODO: Decide how you feel about these three:
     workspace-auto-back-and-forth
     focus-follows-mouse
-    warp-mouse-to-focus
 
     keyboard {
         xkb {
