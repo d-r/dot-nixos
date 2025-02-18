@@ -2,6 +2,13 @@
 // RULES
 
 window-rule {
+    match app-id="firefox"
+    match app-id="brave-browser"
+
+    open-maximized true
+}
+
+window-rule {
     match app-id="clipse"
 
     open-floating true
