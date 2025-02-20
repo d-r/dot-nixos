@@ -162,8 +162,8 @@ prefer-no-csd
 screenshot-path "~/images/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
 environment {
-    // Needed for xwayland-satellite.
-    DISPLAY ":0"
+    DISPLAY ":0" // Needed for xwayland-satellite.
+    DEFAULT_BROWSER "brave"
 }
 
 input {
