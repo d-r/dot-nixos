@@ -30,6 +30,9 @@ window-rule {
 // To see all bindable actions:
 // $ niri msg action -h
 
+// Run command inside a shell:
+// spawn "sh" "-c" "notify-send Hello \"OH, HAI!\"""
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+Delete { quit skip-confirmation=true; }
@@ -40,7 +43,7 @@ binds {
 
     // Run programs
 
-    Mod+P { spawn "rofi" "-show-icons" "-show" "drun"; }
+    Mod+P { spawn "sh" "-c" "pkill rofi || rofi -show drun -show-icons"; }
     Mod+Return { spawn "kitty"; }
     Mod+E { spawn "code"; }
     Mod+B { spawn "brave"; }
