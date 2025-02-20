@@ -1,0 +1,8 @@
+#!/usr/bin/env nu
+
+def main [] {
+	let choice = column ~/data/bookmarks.txt -t | sk --reverse --delimiter ' ' --nth 1
+    let parts = $choice | split row --regex '\s+'
+    let url = $parts.1
+    brave $url
+}
