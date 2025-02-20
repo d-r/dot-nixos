@@ -2,10 +2,6 @@
 
 def main [] {}
 
-def "main bm" [] {
-    kitty -o font_size=13 --class menu -e ~/dot/bin/bm
-}
-
 #-------------------------------------------------------------------------------
 # HYPRLAND
 
@@ -54,9 +50,54 @@ def "main info" [] {
     notify-send --expire-time=0 (hc activeworkspace | str trim)
 }
 
-#-------------------------------------------------------------------------------
-# PRIVATE
-
 def get_workspace [] {
     hc activeworkspace -j | from json
+}
+
+#-------------------------------------------------------------------------------
+# NIRI
+
+def "main bm" [] {
+    let w = ni get "menu"
+    if $w != null {
+        niri msg action close-window --id $w.id
+    } else {
+        kitty -o font_size=13 --class menu -e ~/dot/bin/bm
+    }
+}
+
+def ni [] {}
+
+# List workspaces
+def "ni workspaces" [] {
+    ni msg workspaces
+}
+
+# List windows
+def "ni windows" [] {
+    ni msg windows
+}
+
+# Get the focused window
+def "ni focused-window" [] {
+    ni msg focused-window
+}
+
+# Get the focused output
+def "ni focused-output" [] {
+    ni msg focused-output
+}
+
+# Get the first window with the given app ID
+def "ni get" [app_id: string] {
+    let ws = ni windows | where app_id == $app_id
+    if ($ws | is-not-empty) {
+        $ws | first
+    } else {
+        null
+    }
+}
+
+def "ni msg" [cmd: string] {
+    niri msg --json $cmd | from json
 }
