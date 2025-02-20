@@ -41,10 +41,15 @@ binds {
 
     // Focus
 
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-or-workspace-down; }
+    Mod+K { focus-window-or-workspace-up; }
+    Mod+L { focus-column-right; }
+
     Mod+Left { focus-column-left; }
-    Mod+Right { focus-column-right; }
-    Mod+Up { focus-window-or-workspace-up; }
     Mod+Down { focus-window-or-workspace-down; }
+    Mod+Up { focus-window-or-workspace-up; }
+    Mod+Right { focus-column-right; }
 
     Mod+Home { focus-column-first; }
     Mod+End { focus-column-last; }
@@ -65,10 +70,15 @@ binds {
     // Move
     // TODO: Decide which modifier(s) to use for moving stuff.
 
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+J { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K { move-window-up-or-to-workspace-up; }
+    Mod+Shift+L { move-column-right; }
+
     Mod+Shift+Left { move-column-left; }
-    Mod+Shift+Right { move-column-right; }
-    Mod+Shift+Up { move-window-up-or-to-workspace-up; }
     Mod+Shift+Down { move-window-down-or-to-workspace-down; }
+    Mod+Shift+Up { move-window-up-or-to-workspace-up; }
+    Mod+Shift+Right { move-column-right; }
 
     Mod+Shift+Home { move-column-to-first; }
     Mod+Shift+End { move-column-to-last; }
@@ -82,11 +92,11 @@ binds {
     // Monitors
     // TODO: Come up with better bindings.
 
-    Mod+BracketLeft { focus-monitor-left; }
-    Mod+BracketRight { focus-monitor-right; }
+    Mod+U { focus-monitor-left; }
+    Mod+I { focus-monitor-right; }
 
-    Mod+Shift+BracketLeft { move-column-to-monitor-left; }
-    Mod+Shift+BracketRight { move-column-to-monitor-right; }
+    Mod+Shift+U { move-column-to-monitor-left; }
+    Mod+Shift+I { move-column-to-monitor-right; }
 
     // Screenshotting
     // These are similar to the binds on macOS, as I'm used to `em.
