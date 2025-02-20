@@ -44,7 +44,7 @@ binds {
     Mod+Return { spawn "kitty"; }
     Mod+E { spawn "code"; }
     Mod+B { spawn "brave"; }
-    Mod+Shift+B { spawn "kitty" "-o" "font_size=13" "--class" "menu" "-e" "/home/dan/dot/bin/bm"; }
+    Mod+Shift+B { spawn "cx" "bm"; }
     Mod+V { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
 
     // Focus
