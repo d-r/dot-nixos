@@ -15,6 +15,13 @@ window-rule {
     max-width 700
 }
 
+window-rule {
+    match app-id="menu"
+
+    open-floating true
+    opacity 0.9
+}
+
 //------------------------------------------------------------------------------
 // KEYBINDINGS
 
@@ -37,6 +44,7 @@ binds {
     Mod+Return { spawn "kitty"; }
     Mod+E { spawn "code"; }
     Mod+B { spawn "brave"; }
+    Mod+Shift+B { spawn "kitty" "-o" "font_size=13" "--class" "menu" "-e" "/home/dan/dot/bin/bm"; }
     Mod+V { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
 
     // Focus
