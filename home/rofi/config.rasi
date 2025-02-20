@@ -1,0 +1,6 @@
+@theme "squared-nord"
+
+listview {
+    lines: 16;
+    fixed-height: true;
+}

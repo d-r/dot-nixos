@@ -55,6 +55,7 @@ in {
     "waybar".source = "${dots}/waybar";
     "niri".source = "${dots}/niri";
     "hypr/dan.conf".source = "${dots}/hypr/hyprland.conf";
+    "rofi".source = "${dots}/rofi";
   };
 
   home.sessionPath = [
