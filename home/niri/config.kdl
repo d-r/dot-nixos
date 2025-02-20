@@ -36,7 +36,7 @@ binds {
     Mod+P { spawn "rofi" "-show-icons" "-show" "drun"; }
     Mod+Return { spawn "kitty"; }
     Mod+E { spawn "code"; }
-    Mod+B { spawn "firefox"; }
+    Mod+B { spawn "brave"; }
     Mod+V { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
 
     // Focus
