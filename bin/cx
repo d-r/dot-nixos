@@ -62,7 +62,7 @@ def "main bm" [] {
     if $w != null {
         niri msg action close-window --id $w.id
     } else {
-        kitty -o font_size=13 --class menu -e ~/dot/bin/bm
+        wezterm --config font_size=13 start --class menu -e ~/dot/bin/bm
     }
 }
 

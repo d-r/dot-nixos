@@ -9,17 +9,21 @@ window-rule {
 }
 
 window-rule {
-    match app-id="clipse"
-
-    open-floating true
-    max-width 700
-}
-
-window-rule {
     match app-id="menu"
 
     open-floating true
     opacity 0.9
+    default-column-width { fixed 900; }
+    default-window-height { fixed 800; }
+}
+
+window-rule {
+    match app-id="clipse"
+
+    open-floating true
+    opacity 0.9
+    default-column-width { fixed 600; }
+    default-window-height { fixed 800; }
 }
 
 //------------------------------------------------------------------------------
@@ -44,11 +48,11 @@ binds {
     // Run programs
 
     Mod+P { spawn "sh" "-c" "pkill rofi || rofi -show drun -show-icons"; }
-    Mod+Return { spawn "kitty"; }
+    Mod+Return { spawn "wezterm"; }
     Mod+E { spawn "code"; }
     Mod+B { spawn "brave"; }
     Mod+Shift+B { spawn "cx" "bm"; }
-    Mod+V { spawn "kitty" "--class" "clipse" "-e" "clipse"; }
+    Mod+V { spawn "wezterm" "start" "--class" "clipse" "-e" "clipse"; }
 
     // Focus
 
