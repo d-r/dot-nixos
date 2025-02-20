@@ -5,3 +5,7 @@ dateFormat=d-b-y
 
 # Don't nag me about news
 news.version=3.9.9
+context.dm.read=pro:dm
+context.dm.write=pro:dm
+context.sys.read=pro:sys
+context.sys.write=pro:sys
