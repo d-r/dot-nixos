@@ -132,6 +132,8 @@
     # https://github.com/savedra1/clipse
     clipse
 
+    wezterm
+
     # CLI
 
     nushell
