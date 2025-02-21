@@ -74,6 +74,9 @@ in {
     localVariables = {
       PROMPT = "%F{blue}%~> ";
     };
+    shellAliases = {
+      "l" = "ls -alh";
+    };
   };
 
   programs.nushell = {
