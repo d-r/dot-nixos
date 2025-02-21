@@ -131,6 +131,10 @@
 
     wezterm
 
+    # LSP for Markdown notes taking
+    # https://github.com/iwe-org/iwe
+    iwe
+
     # CLI
 
     nushell
