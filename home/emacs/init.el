@@ -206,7 +206,7 @@
 
 (use-package denote
   :init
-  (setq denote-directory (expand-file-name "~/notes"))
+  (setq denote-directory (expand-file-name "~/org/denote"))
   (setq denote-known-keywords '("howto" "project" "person" "draft"))
   (setq denote-backlinks-show-context t)
   (setq denote-sort-keywords nil)
