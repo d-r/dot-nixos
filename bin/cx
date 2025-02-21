@@ -8,7 +8,7 @@ def main [] {}
 alias hc = hyprctl
 alias dis = hc dispatch
 
-const WS_COUNT = 5
+const WS_COUNT = 4
 
 def "main up" [] {
     let ws = get_workspace
