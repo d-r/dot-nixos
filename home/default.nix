@@ -60,6 +60,10 @@ in {
     "yazi".source = "${dots}/yazi";
   };
 
+  home.sessionVariables = {
+    SKIM_DEFAULT_OPTIONS = "--reverse"; # > Prompt at the top
+  };
+
   home.sessionPath = [
     "$HOME/dot/bin"
   ];

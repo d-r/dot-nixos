@@ -1,7 +1,6 @@
 $env.config.show_banner = false
 
 $env.PROMPT_COMMAND_RIGHT = ""
-$env.SKIM_DEFAULT_OPTIONS = "--reverse" # Prompt at the top
 
 # Wrapper around yazi that provides the ability to change the current working
 # directory on exit.
