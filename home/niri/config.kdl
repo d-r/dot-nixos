@@ -187,7 +187,7 @@ input {
 }
 
 layout {
-    gaps 8
+    gaps 4
     // default-column-display "tabbed"
     default-column-display "normal"
 
@@ -202,6 +202,10 @@ layout {
     }
 
     focus-ring {
+        off
+    }
+
+    border {
         width 2
         active-color "#7fc8ff"
         inactive-color "#00000000"
