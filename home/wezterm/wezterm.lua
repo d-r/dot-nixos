@@ -13,6 +13,6 @@ config.font_size = 10 -- In points
 config.harfbuzz_features = {'calt=0'} -- Disable ligatures
 
 -- config.color_scheme = 'Modus Vivendi (Gogh)'
-config.color_scheme = 'Vs Code Dark+ (Gogh)'
+-- config.color_scheme = 'Vs Code Dark+ (Gogh)'
 
 return config
