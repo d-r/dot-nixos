@@ -2,15 +2,25 @@
 
 # Get brightness
 def main [] {
-    brightnessctl get
+    get
 }
 
 # Decrease brightness by 10%
 def "main dec" [] {
     brightnessctl set 10%-
+    notify
 }
 
 # Increase brightness by 10%
 def "main inc" [] {
     brightnessctl set 10%+
+    notify
+}
+
+def notify [] {
+    notify-send --expire-time=1000 -h string:x-canonical-private-synchronous:sys-notify $"Brightness (main)"
+}
+
+def get [] {
+    brightnessctl get
 }

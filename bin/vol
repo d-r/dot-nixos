@@ -2,25 +2,37 @@
 
 # Get volume
 def main [] {
-    wpctl get-volume @DEFAULT_AUDIO_SINK@
+    get
 }
 
 # Decrease volume by 5%
 def "main dec" [] {
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    notify
 }
 
 # Increase volume by 5%
 def "main inc" [] {
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+    notify
 }
 
 # Mute/unmute sound
 def "main toggle" [] {
     wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    notify
 }
 
 # Mute/unmute microphone
 def "main toggle-mic" [] {
     wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+    notify
+}
+
+def notify [] {
+    notify-send --expire-time=1000 -h string:x-canonical-private-synchronous:sys-notify (get)
+}
+
+def get [] {
+    wpctl get-volume @DEFAULT_AUDIO_SINK@
 }
