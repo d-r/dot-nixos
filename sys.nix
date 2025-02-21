@@ -42,7 +42,7 @@
     NIXOS_OZONE_WL = "1"; # Without this, Electron apps won't run in `niri`.
     EDITOR = "micro";
     TERMINAL = "kitty";
-    DEFAULT_BROWSER = "firefox";
+    DEFAULT_BROWSER = "brave";
   };
 
   #-----------------------------------------------------------------------------

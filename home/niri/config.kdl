@@ -163,7 +163,6 @@ screenshot-path "~/images/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
 environment {
     DISPLAY ":0" // Needed for xwayland-satellite.
-    DEFAULT_BROWSER "brave"
 }
 
 input {
