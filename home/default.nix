@@ -51,8 +51,6 @@ in {
     "tealdeer".source = "${dots}/tealdeer";
     "nvim".source = "${dots}/nvim";
     "nushell/dan.nu".source = "${dots}/nushell/config.nu";
-    "emacs/early-init.el".source = "${dots}/emacs/early-init.el";
-    "emacs/init.el".source = "${dots}/emacs/init.el";
     "waybar".source = "${dots}/waybar";
     "niri".source = "${dots}/niri";
     "hypr/dan.conf".source = "${dots}/hypr/hyprland.conf";

@@ -72,8 +72,6 @@
     dbus.enable = true;
 
     gnome.gnome-keyring.enable = true;
-
-    emacs.enable = true;
   };
 
   xdg.portal = {
@@ -117,7 +115,6 @@
     skim
     carapace
     mako
-    emacs
     neovim
     brave
     qutebrowser
