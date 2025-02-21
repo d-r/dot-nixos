@@ -5,7 +5,7 @@
 }
 
 #waybar {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #bbb;
     font-family: "Terminus", sans-serif;
     font-size: 14px;
