@@ -1,5 +1,18 @@
 //------------------------------------------------------------------------------
-// RULES
+// WORKSPACES AND WINDOWS
+
+workspace "T" {
+}
+
+window-rule {
+    match app-id="scratch"
+
+    open-on-workspace "T"
+    open-maximized true
+    border {
+        off
+    }
+}
 
 window-rule {
     match app-id="firefox"
@@ -43,12 +56,8 @@ binds {
 
     Mod+Backspace { close-window; }
 
-    // Layout
-
-    Mod+F { maximize-column; }
-    Mod+R { switch-preset-column-width; }
-
-    // Run programs
+    Mod+Backslash { focus-workspace "T"; }
+    Mod+Shift+Backslash { spawn "wezterm" "--config" "font_size=14" "start" "--class" "scratch"; }
 
     Mod+P { spawn "sh" "-c" "pkill rofi || rofi -show drun -show-icons"; }
     Mod+Return { spawn "wezterm"; }
@@ -56,6 +65,11 @@ binds {
     Mod+B { spawn "brave"; }
     Mod+Shift+B { spawn "cx" "bookmarks"; }
     Mod+V { spawn "cx" "clipboard"; }
+
+    // Layout
+
+    Mod+F { maximize-column; }
+    Mod+R { switch-preset-column-width; }
 
     // Focus
 
@@ -241,6 +255,11 @@ hotkey-overlay {
 spawn-at-startup "xwayland-satellite"
 
 spawn-at-startup "swaybg" "--image" "/home/dan/dot/wallpapers/alena-aenami-all-i-need-1080p.jpg"
+
 spawn-at-startup "waybar" "-c" "/home/dan/dot/home/niri/waybar.jsonc"
+
 spawn-at-startup "clipse" "-listen"
+
 spawn-at-startup "code"
+
+spawn-at-startup "wezterm" "--config" "font_size=14" "start" "--class" "scratch";
