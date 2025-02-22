@@ -43,7 +43,10 @@ binds {
 
     Mod+Backspace { close-window; }
 
+    // Layout
+
     Mod+F { maximize-column; }
+    Mod+R { switch-preset-column-width; }
 
     // Run programs
 
