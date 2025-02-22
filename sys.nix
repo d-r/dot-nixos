@@ -193,18 +193,6 @@
     jetbrains.clion
   ];
 
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    iosevka
-    iosevka-comfy.comfy
-    roboto
-    roboto-slab
-    roboto-mono
-    cantarell-fonts
-    terminus_font_ttf
-    terminus_font
-  ];
-
   programs.nh = {
     enable = true;
     clean.enable = true;
@@ -228,4 +216,36 @@
   programs.xwayland.enable = true;
 
   programs.dconf.enable = true;
+
+  fonts = {
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = ["Atkinson Hyperlegible"];
+        sansSerif = ["Atkinson Hyperlegible"];
+        monospace = ["JetBrains Mono"];
+      };
+    };
+    fontDir.enable = true; # Expose available fonts under /run/current-system/sw/share/X11/fonts
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      atkinson-hyperlegible
+      atkinson-monolegible
+
+      jetbrains-mono
+      nerd-fonts.jetbrains-mono
+
+      iosevka
+      iosevka-comfy.comfy
+
+      cantarell-fonts
+
+      roboto
+      roboto-slab
+      roboto-mono
+
+      terminus_font_ttf
+      terminus_font
+    ];
+  };
 }
