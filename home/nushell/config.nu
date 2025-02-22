@@ -1,3 +1,5 @@
+$env.NU_LIB_DIRS = ["~/dot/home/nushell"]
+
 $env.config.show_banner = false
 
 $env.PROMPT_COMMAND_RIGHT = ""
