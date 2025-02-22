@@ -214,6 +214,7 @@ layout {
         position "top"
         place-within-column
         active-color "#7fc8ff"
+        inactive-color "#00000000"
     }
 
     focus-ring {
