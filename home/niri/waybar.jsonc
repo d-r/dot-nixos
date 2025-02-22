@@ -23,12 +23,12 @@
         "separate-outputs": true
     },
     "pulseaudio": {
-        "format": "{volume}% <span foreground=\"#777\">VO</span>",
-        "format-muted": "<s>{volume}%</s> <span foreground=\"#777\">VO</span>",
+        "format": "{volume:3}% <span foreground=\"#777\">VO</span>",
+        "format-muted": "<s>{volume:3}%</s> <span foreground=\"#777\">VO</span>",
         "on-click": "pkill pavucontrol || pavucontrol"
     },
     "backlight": {
-        "format": "{percent}% <span foreground=\"#777\">BR</span>",
+        "format": "{percent:3}% <span foreground=\"#777\">BR</span>",
         "tooltip": false
     },
     "battery": {
@@ -37,13 +37,13 @@
             "warning": 20,
             "critical": 10
         },
-        "format": "{capacity}% <span foreground=\"#777\">BA</span>",
-        "format-charging": "{capacity}% <span foreground=\"white\">AC</span>",
+        "format": "{capacity:3}% <span foreground=\"#777\">BA</span>",
+        "format-charging": "{capacity:3}% <span foreground=\"white\">AC</span>",
         "tooltip": false
     },
     "network": {
         "interval": 5,
-        "format": "{signalStrength}% <span foreground=\"#777\">WI</span>",
+        "format": "{signalStrength:3}% <span foreground=\"#777\">WI</span>",
         "format-disconnected": "OFFLINE",
         "tooltip-format": "{essid}\n{ipaddr}\n{ifname}"
     },
