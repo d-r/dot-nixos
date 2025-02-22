@@ -1,18 +1,17 @@
 //------------------------------------------------------------------------------
 // WORKSPACES AND WINDOWS
 
-workspace "T" {
-}
+// workspace "T" {}
 
-window-rule {
-    match app-id="scratch"
+// window-rule {
+//     match app-id="scratch"
 
-    open-on-workspace "T"
-    open-maximized true
-    border {
-        off
-    }
-}
+//     open-on-workspace "T"
+//     open-maximized true
+//     border {
+//         off
+//     }
+// }
 
 window-rule {
     match app-id="firefox"
@@ -56,7 +55,7 @@ binds {
 
     Mod+Backspace { close-window; }
 
-    Mod+Backslash { focus-workspace "T"; }
+    // Mod+Backslash { focus-workspace "T"; }
     Mod+Shift+Backslash { spawn "wezterm" "--config" "font_size=14" "start" "--class" "scratch"; }
 
     Mod+P { spawn "sh" "-c" "pkill rofi || rofi -show drun -show-icons"; }
@@ -274,4 +273,4 @@ spawn-at-startup "clipse" "-listen"
 
 spawn-at-startup "code"
 
-spawn-at-startup "wezterm" "--config" "font_size=14" "start" "--class" "scratch";
+// spawn-at-startup "wezterm" "--config" "font_size=14" "start" "--class" "scratch";
