@@ -20,7 +20,8 @@ build:
 # Collect garbage (delete old revisions)
 [group('System')]
 gc:
-    nh os clean all
+    nh clean all
+    nh os switch
 
 # Update flake inputs
 [group('Flake')]
