@@ -204,7 +204,15 @@ input {
 
 layout {
     gaps 8
+    center-focused-column "never"
     default-column-display "tabbed"
+
+    default-column-width { proportion 0.5; }
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
 
     tab-indicator {
         hide-when-single-tab
@@ -233,12 +241,8 @@ layout {
         bottom -8
     }
 
-    center-focused-column "never"
-    default-column-width { proportion 0.5; }
-    preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
-        proportion 0.66667
+    shadow {
+        on
     }
 }
 
