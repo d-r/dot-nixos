@@ -147,7 +147,6 @@ output "eDP-1" {
 
 // Right: Asus ROG XG279, 27", 2560x1440, 170 Hz
 output "HDMI-A-1" {
-    mode "2560x1440@144.006"
     variable-refresh-rate
     scale 1
     position x=1920 y=0
