@@ -203,7 +203,7 @@ input {
 }
 
 layout {
-    gaps 4
+    gaps 8
     default-column-display "tabbed"
 
     tab-indicator {
@@ -223,6 +223,13 @@ layout {
     border {
         width 2
         active-color "#7fc8ff"
+    }
+
+    struts {
+        left -8
+        right -8
+        top -8
+        bottom -8
     }
 
     center-focused-column "never"
