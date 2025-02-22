@@ -25,7 +25,7 @@
     "pulseaudio": {
         "format": "{volume}% <span foreground=\"#777\">VO</span>",
         "format-muted": "<s>{volume}%</s> <span foreground=\"#777\">VO</span>",
-        "on-click": "pavucontrol"
+        "on-click": "pkill pavucontrol || pavucontrol"
     },
     "backlight": {
         "format": "{percent}% <span foreground=\"#777\">BR</span>",
