@@ -29,15 +29,6 @@ window-rule {
     default-window-height { fixed 900; }
 }
 
-window-rule {
-    match app-id="clipse"
-
-    open-floating true
-    opacity 0.9
-    default-column-width { fixed 700; }
-    default-window-height { fixed 900; }
-}
-
 //------------------------------------------------------------------------------
 // KEYBINDINGS
 
@@ -268,8 +259,6 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "swaybg" "--image" "/home/dan/dot/wallpapers/alena-aenami-all-i-need-1080p.jpg"
 
 spawn-at-startup "waybar" "-c" "/home/dan/dot/home/niri/waybar.jsonc"
-
-spawn-at-startup "clipse" "-listen"
 
 spawn-at-startup "code"
 

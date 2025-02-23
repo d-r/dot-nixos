@@ -125,10 +125,6 @@
     # https://github.com/bugaevc/wl-clipboard
     wl-clipboard
 
-    # TUI clipboard manager
-    # https://github.com/savedra1/clipse
-    clipse
-
     wezterm
 
     # LSP for Markdown notes taking

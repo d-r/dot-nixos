@@ -57,10 +57,6 @@ def get_workspace [] {
 #-------------------------------------------------------------------------------
 # NIRI
 
-def "main clipboard" [] {
-    wezterm --config font_size=13 start --class clipse -e clipse
-}
-
 def "main bookmarks" [] {
     let w = ni get "menu"
     if $w != null {
