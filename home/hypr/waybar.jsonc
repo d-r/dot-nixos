@@ -43,7 +43,7 @@
     },
     "network": {
         "interval": 5,
-        "format": "{signalStrength}% <span foreground=\"#777\">WI</span>",
+        "format": "{signalStrength:3}% <span foreground=\"#777\">WI</span>",
         "format-disconnected": "OFFLINE",
         "tooltip-format": "{essid}\n{ipaddr}\n{ifname}"
     },
