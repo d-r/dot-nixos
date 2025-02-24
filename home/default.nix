@@ -110,6 +110,7 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = true;
     package = null; # Use the packages from the NixOS module.
     portalPackage = null;
     plugins = [
