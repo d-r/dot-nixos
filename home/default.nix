@@ -18,12 +18,6 @@
     j = "just";
     t = "task";
     yt = "yt-dlp";
-
-    g = "git";
-    gs = "git st";
-    gd = "git diff";
-    gl = "git log";
-    gc = "git clone";
   };
 in {
   home.stateVersion = "24.05";
