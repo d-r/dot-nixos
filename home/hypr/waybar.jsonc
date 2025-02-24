@@ -19,7 +19,7 @@
     ],
 
     "hyprland/window": {
-        "format": "{title} ({app_id})",
+        "format": "{title} ({class})",
         "separate-outputs": true
     },
     "pulseaudio": {
