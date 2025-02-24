@@ -260,6 +260,4 @@ spawn-at-startup "swaybg" "--image" "/home/dan/dot/wallpapers/alena-aenami-all-i
 
 spawn-at-startup "waybar" "-c" "/home/dan/dot/home/niri/waybar.jsonc"
 
-spawn-at-startup "code"
-
 // spawn-at-startup "wezterm" "--config" "font_size=14" "start" "--class" "scratch";
